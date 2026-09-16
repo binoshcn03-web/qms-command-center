@@ -1,6 +1,6 @@
 # Enterprise Quality Management (EQM) Command Center
 
-![QMS Command Center - Main View](Screenshot 2026-09-16 081830.png)
+![QMS Command Center - Main View](main_dashboard.png)
 
 ## Executive Summary
 The EQM Command Center is a robust, enterprise-grade Power BI analytical solution engineered to evaluate operational quality, agent coaching effectiveness, and customer experience outcomes. By unifying CRM interaction data, quality evaluations, and financial impact metrics, this dashboard elevates quality assurance from reactive scoring to proactive statistical process control.  
@@ -27,25 +27,25 @@ Enterprise operations frequently struggle to bridge the gap between internal qua
 
 ### 1. Quality & FMEA (Failure Mode and Effects Analysis)
 Tracks defect rates against CSAT and utilizes automated Risk Priority Number (RPN) scoring to identify high-impact failure modes.
-![Quality and FMEA View](Screenshot 2026-09-16 081932.png)
+![Quality and FMEA View](quality_fmea.png)
 
 ### 2. TCD / Customer Experience
 Monitors contact mix, DSAT (Dissatisfaction) rates, and resolution effectiveness across various contact reasons and channels.
-![Customer Experience View 1](Screenshot 2026-09-16 081949.png)
+![Customer Experience View 1](customer-experience-1.png)
 *(Alternate View)*
-![Customer Experience View 2](Screenshot 2026-09-16 082001.png)
+![Customer Experience View 2](customer-experience-2.png)
 
 ### 3. Auditor Calibration
 Measures evaluator alignment against a standard "Gauge," identifying scoring variances, outside-tolerance rates, and overall precision to ensure audit fairness.
-![Auditor Calibration View](Screenshot 2026-09-16 082018.png)
+![Auditor Calibration View](auditor-calibration.png)
 
 ### 4. Quality Coaching & Feedback
 Tracks post-evaluation coaching sessions, focusing on SLA adherence, feedback lag hours, and fatal error coaching compliance.
-![Quality Coaching View](Screenshot 2026-09-16 082042.png)
+![Quality Coaching View](quality-coaching.png)
 
 ### 5. QA Audit Raw Data
 Provides granular, unpivoted line-item defect data utilized for precise DPMO (Defects Per Million Opportunities) and Yield calculations.
-![Raw Data Matrix](Screenshot 2026-09-16 082057.jpg)
+![Raw Data Matrix](raw-data.jpg)
 
 ---
 
