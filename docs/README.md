@@ -45,7 +45,6 @@ Tracks post-evaluation coaching sessions, focusing on SLA adherence, feedback la
 
 ### 5. QA Audit Raw Data
 Provides granular, unpivoted line-item defect data utilized for precise DPMO (Defects Per Million Opportunities) and Yield calculations.
-![Raw Data Matrix](raw-data.jpg)
 
 ---
 
