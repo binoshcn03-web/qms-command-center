@@ -1,0 +1,41 @@
+# Power BI Desktop project (PBIP) — official
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Extra Power BI / Fabric local junk
+**/.pbi/unappliedChanges.json
+**/.pbi/*.abf
+*.pbix.lock
+*.pbit.lock
+~*.pbix
+
+# Keep the .pbix out of Git (large binary). Copy lives next to PBIP on disk.
+*.pbix
+*.pbit
+
+# Synthetic / source extracts — stay on disk in Data_Source, not in Git
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.zip
+Data_Source/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Windows / OneDrive
+Thumbs.db
+Desktop.ini
+~$*
+*.tmp
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
