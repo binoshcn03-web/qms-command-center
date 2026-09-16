@@ -4,7 +4,7 @@
 
 ## Executive Summary
 The EQM Command Center is a robust, enterprise-grade Power BI analytical solution engineered to evaluate operational quality, agent coaching effectiveness, and customer experience outcomes. By unifying CRM interaction data, quality evaluations, and financial impact metrics, this dashboard elevates quality assurance from reactive scoring to proactive statistical process control.  
-![Dashboard Interactivity Demo](dashboard_demo.mp4)
+![Dashboard Interactivity Demo](dashboard-demo.mp4)
 
 ## Tech Stack & Core Competencies Showcase
 * **Platform:** Power BI Desktop, Power BI Service.  
