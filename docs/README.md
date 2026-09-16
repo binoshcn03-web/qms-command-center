@@ -1,7 +1,17 @@
 # Enterprise Quality Management (EQM) Command Center
 
+![QMS Command Center - Main View](Screenshot 2026-09-16 081830.png)
+
 ## Executive Summary
 The EQM Command Center is a robust, enterprise-grade Power BI analytical solution engineered to evaluate operational quality, agent coaching effectiveness, and customer experience outcomes. By unifying CRM interaction data, quality evaluations, and financial impact metrics, this dashboard elevates quality assurance from reactive scoring to proactive statistical process control.  
+
+## Tech Stack & Core Competencies Showcase
+* **Platform:** Power BI Desktop, Power BI Service.  
+* **Data Engineering:** Power Query (M), ETL unpivoting, Dimensional Modeling.  
+* **Analytical Frameworks:** Lean Six Sigma (LSSGB), Statistical Process Control (SPC), Failure Mode and Effects Analysis (FMEA).  
+* **Advanced DAX:** Predictive Linear Regression (`LINESTX`), custom Iterators, Parent-Child Hierarchies (`PATH`), and custom statistical algorithms.
+
+---
 
 ## Business Problem & Objective
 Enterprise operations frequently struggle to bridge the gap between internal quality metrics and actual customer satisfaction (CSAT) or financial impact. Furthermore, isolating systemic process instability from isolated behavioral errors requires extensive manual analysis.  
@@ -10,6 +20,34 @@ Enterprise operations frequently struggle to bridge the gap between internal qua
 * **Translating Defects to Dollars:** Quantifying the direct financial impact of defects using Cost of Poor Quality (COPQ) metrics, mapped via internal and external rate structures.  
 * **Implementing Statistical Process Control (SPC):** Moving beyond simple averages to track process variance, Upper/Lower Control Limits (UCL/LCL), and Nelson Rules for anomaly detection natively in DAX.  
 * **Automating Risk Prioritization:** Embedding FMEA principles to automatically generate Risk Priority Numbers (RPN) for specific QA parameters based on Occurrence, Severity, and Detection.  
+
+---
+
+## Core Analytical Modules & Dashboard Views
+
+### 1. Quality & FMEA (Failure Mode and Effects Analysis)
+Tracks defect rates against CSAT and utilizes automated Risk Priority Number (RPN) scoring to identify high-impact failure modes.
+![Quality and FMEA View](Screenshot 2026-09-16 081932.png)
+
+### 2. TCD / Customer Experience
+Monitors contact mix, DSAT (Dissatisfaction) rates, and resolution effectiveness across various contact reasons and channels.
+![Customer Experience View 1](Screenshot 2026-09-16 081949.png)
+*(Alternate View)*
+![Customer Experience View 2](Screenshot 2026-09-16 082001.png)
+
+### 3. Auditor Calibration
+Measures evaluator alignment against a standard "Gauge," identifying scoring variances, outside-tolerance rates, and overall precision to ensure audit fairness.
+![Auditor Calibration View](Screenshot 2026-09-16 082018.png)
+
+### 4. Quality Coaching & Feedback
+Tracks post-evaluation coaching sessions, focusing on SLA adherence, feedback lag hours, and fatal error coaching compliance.
+![Quality Coaching View](Screenshot 2026-09-16 082042.png)
+
+### 5. QA Audit Raw Data
+Provides granular, unpivoted line-item defect data utilized for precise DPMO (Defects Per Million Opportunities) and Yield calculations.
+![Raw Data Matrix](Screenshot 2026-09-16 082057.jpg)
+
+---
 
 ## Data Dictionary & Schema Architecture
 The solution employs a highly scalable Star Schema architecture optimized for DAX performance and large-scale data.  
@@ -24,9 +62,3 @@ The solution employs a highly scalable Star Schema architecture optimized for DA
 | **`Dim_Employee`** | Dimension | Manages the organizational hierarchy and tracks agent tenure milestones (e.g., nesting days). |
 | **`Dim_QA_Parameter`** | Dimension | Classifies QA attributes by criticality, FMEA Detection/Severity factors, and Ishikawa pillars. |
 | **`Dim_COPQ_Rate`** | Dimension | Houses internal and external defect cost values mapped to specific failure classes. |
-
-## Tech Stack & Core Competencies Showcase
-* **Platform:** Power BI Desktop, Power BI Service.  
-* **Data Engineering:** Power Query (M), ETL unpivoting, Dimensional Modeling.  
-* **Analytical Frameworks:** Lean Six Sigma (LSSGB), Statistical Process Control (SPC), Failure Mode and Effects Analysis (FMEA).  
-* **Advanced DAX:** Predictive Linear Regression (`LINESTX`), custom Iterators, Parent-Child Hierarchies (`PATH`), and custom statistical algorithms.
