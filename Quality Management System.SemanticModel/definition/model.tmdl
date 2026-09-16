@@ -1,0 +1,61 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 11-09-2026 18:11:56.
+queryGroup 'Query Errors - 11-09-2026 18:11:56'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 12-09-2026 11:55:23.
+queryGroup 'Query Errors - 12-09-2026 11:55:23'
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim_Coaching","Dim_COPQ_Rate","Dim_Date","Dim_Employee","Dim_QA_Parameter","Dim_TCD","Fact_Calibration","Fact_Coaching","Fact_CRM_Contact","Fact_QA_Evaluation","Fact_Sampling_Plan","Errors in Fact_CRM_Contact","Errors in Fact_QA_Evaluation","Fact_QA_Evaluation_Line","_Measures","Errors in Fact_CRM_Contact (2)","Errors in Fact_QA_Evaluation (2)"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Coaching
+ref table Dim_COPQ_Rate
+ref table DateTableTemplate_b657f9f7-9b77-4bdf-bec7-5916d4f1f996
+ref table LocalDateTable_adbf734b-c919-4dca-b54e-349b8fa39c51
+ref table Dim_Date
+ref table Dim_Employee
+ref table LocalDateTable_730ce55c-d92d-41a0-8bc5-e6c6f7df1472
+ref table LocalDateTable_0f948ddd-155f-4a15-bcba-0e8a92878af8
+ref table LocalDateTable_abff0c10-983a-4803-b13d-1afe7665fe86
+ref table Dim_QA_Parameter
+ref table LocalDateTable_f1e64d95-66c7-47a2-abec-2a5aeefe8742
+ref table Dim_TCD
+ref table Fact_Calibration
+ref table LocalDateTable_86c0b4c1-9e7e-4852-9395-cb0cb73c5979
+ref table Fact_Coaching
+ref table LocalDateTable_66f8861b-63e2-4b8f-ac22-0ba79c68b9d6
+ref table LocalDateTable_cdcc0e32-6458-4e12-bb29-c7afd2e059a3
+ref table Fact_CRM_Contact
+ref table LocalDateTable_0188e2ee-f011-4d40-b4f6-6e8e66d635db
+ref table LocalDateTable_da812a61-9cbb-41f2-8c8a-b65b1af322b7
+ref table Fact_QA_Evaluation
+ref table LocalDateTable_9274d622-f58d-4e04-bba1-e8d9bd3e25a3
+ref table LocalDateTable_52332cdf-753b-4f9a-b20e-1f96c6862a3c
+ref table LocalDateTable_38bcf33c-c2ee-4ffb-8d8c-c528d4effa59
+ref table LocalDateTable_50fd83a2-d745-4a30-9591-ac00c508542d
+ref table Fact_Sampling_Plan
+ref table LocalDateTable_33f0c170-9327-41ea-a43f-97c690169051
+ref table LocalDateTable_5a19d094-9979-4349-aef8-f3a53e9bc1bd
+ref table Fact_QA_Evaluation_Line
+ref table _Measures
+ref table 'TCD Grain'
+ref table Parameter
+ref table 'Coaching Performance Parameter'
+
+ref cultureInfo en-IN
+

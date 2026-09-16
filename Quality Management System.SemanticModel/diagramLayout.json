@@ -1,0 +1,228 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 339.6825396825397,
+        "y": 135.44973948645213
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 628.29208090189593,
+            "y": 351.23434816421707
+          },
+          "nodeIndex": "Dim_Coaching",
+          "nodeLineageTag": "fd669c30-3cb6-4876-983b-8f4b7b09c8e8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1203.0464639770557,
+            "y": 604.33703115130481
+          },
+          "nodeIndex": "Dim_COPQ_Rate",
+          "nodeLineageTag": "4d3bbf25-5269-4a72-a3df-7cbc4d052be7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 118.30251054437429,
+            "y": 801.50133470805758
+          },
+          "nodeIndex": "Dim_Date",
+          "nodeLineageTag": "4d4257f8-877c-484f-ab2f-3e381a8fbb76",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 305.96031813545096
+          },
+          "nodeIndex": "Dim_Employee",
+          "nodeLineageTag": "59ed7871-e7a1-4235-95a1-9107ae06c060",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 969.04646397705574,
+            "y": 1063.1619875498068
+          },
+          "nodeIndex": "Dim_QA_Parameter",
+          "nodeLineageTag": "9a801ce7-7995-4474-b8be-6c25a089f64d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 968.35230344950855,
+            "y": 708.30665384735448
+          },
+          "nodeIndex": "Dim_TCD",
+          "nodeLineageTag": "3f610953-8f1e-4a02-80dd-dd0862853dec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 392.94153479585384,
+            "y": 1158.6740623026096
+          },
+          "nodeIndex": "Fact_Calibration",
+          "nodeLineageTag": "87096e31-33d0-4cf9-830d-b5d5940f0d5d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 320.29038885623117,
+            "y": -50
+          },
+          "nodeIndex": "Fact_Coaching",
+          "nodeLineageTag": "22e7c6c1-7d80-4d5e-8efa-d33dcde639a7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 681.81395433816692,
+            "y": 707.97173472240024
+          },
+          "nodeIndex": "Fact_CRM_Contact",
+          "nodeLineageTag": "4f04b282-1dbe-4f29-aa39-9198af738b7f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 339.0687173394366,
+            "y": 445.54067054504048
+          },
+          "nodeIndex": "Fact_QA_Evaluation",
+          "nodeLineageTag": "ecf66dd8-7416-4ad8-ac21-00b31a645702",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1487.0464639770557,
+            "y": 604.33703115130481
+          },
+          "nodeIndex": "Fact_Sampling_Plan",
+          "nodeLineageTag": "06d8af6b-82c1-4906-b0e9-74afc0ff945e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1721.0464639770557,
+            "y": 604.33703115130481
+          },
+          "nodeIndex": "Fact_QA_Evaluation_Line",
+          "nodeLineageTag": "b7d3d8b3-35f9-47cc-90a3-ef2d074e6ef2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1955.0464639770557,
+            "y": 702.33703115130481
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "f7dd9716-6d51-4dd2-a409-d659b1bc3e3e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2189.0464639770557,
+            "y": 678.33703115130481
+          },
+          "nodeIndex": "TCD Grain",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2423.0464639770557,
+            "y": 678.33703115130481
+          },
+          "nodeIndex": "Parameter",
+          "nodeLineageTag": "cccb5c1a-64d6-402c-8581-cd9168ae539a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2657.0464639770557,
+            "y": 678.33703115130481
+          },
+          "nodeIndex": "Coaching Performance Parameter",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 63,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

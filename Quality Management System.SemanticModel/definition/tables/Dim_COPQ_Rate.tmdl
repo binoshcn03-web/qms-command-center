@@ -1,0 +1,148 @@
+table Dim_COPQ_Rate
+	lineageTag: 4d3bbf25-5269-4a72-a3df-7cbc4d052be7
+
+	column CopqRateKey
+		dataType: string
+		lineageTag: 7486ea34-a082-4a5d-9ac9-d67b31fc834e
+		summarizeBy: none
+		sourceColumn: CopqRateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DefectClass
+		dataType: string
+		lineageTag: 3c2b81c8-e865-4a52-bbbc-f89413de0ab7
+		summarizeBy: none
+		sourceColumn: DefectClass
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PafCategory
+		dataType: string
+		lineageTag: 6eb3b3cd-b927-4b5e-83cd-c4f3becfec87
+		summarizeBy: none
+		sourceColumn: PafCategory
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column InternalCostUsd
+		dataType: double
+		lineageTag: 3f21d06e-c784-400b-9d46-d3d394c2fdbf
+		summarizeBy: sum
+		sourceColumn: InternalCostUsd
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ExternalCostUsd
+		dataType: double
+		formatString: 0
+		lineageTag: 788dca59-5a2b-448b-accc-5e2013e5ec57
+		summarizeBy: sum
+		sourceColumn: ExternalCostUsd
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MapsToParameters
+		dataType: string
+		lineageTag: 058d52a8-ec38-40f8-a6eb-ad093305dae2
+		summarizeBy: none
+		sourceColumn: MapsToParameters
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostLogic
+		dataType: string
+		lineageTag: a0a15d26-f285-4ffb-be34-27a0396ba270
+		summarizeBy: none
+		sourceColumn: CostLogic
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: bc8500be-a913-4da0-a349-03d052f30948
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveFrom
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 34dc8281-5c9f-4763-8876-0ae4bf4586e3
+		summarizeBy: none
+		sourceColumn: EffectiveFrom
+
+		variation Variation
+			isDefault
+			relationship: d6402bbd-4662-4275-9169-5356852e8352
+			defaultHierarchy: LocalDateTable_adbf734b-c919-4dca-b54e-349b8fa39c51.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 31da7f00-bfb3-4eb6-9211-95748873be43
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalUnitCostUsd
+		dataType: double
+		lineageTag: be8eefc9-fdfd-4235-bd85-4f6b63416454
+		summarizeBy: sum
+		sourceColumn: TotalUnitCostUsd
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dim_COPQ_Rate = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_COPQ_Rate.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"CopqRateKey", type text}, {"DefectClass", type text}, {"PafCategory", type text},
+				        {"InternalCostUsd", type number}, {"ExternalCostUsd", type number},
+				        {"MapsToParameters", type text}, {"CostLogic", type text}, {"Currency", type text},
+				        {"EffectiveFrom", type date}, {"IsActive", type logical}, {"TotalUnitCostUsd", type number}
+				    }),
+				    Clean = Table.SelectRows(Types, each [CopqRateKey] <> null and [CopqRateKey] <> ""),
+				    Distinct = Table.Distinct(Clean, {"CopqRateKey"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

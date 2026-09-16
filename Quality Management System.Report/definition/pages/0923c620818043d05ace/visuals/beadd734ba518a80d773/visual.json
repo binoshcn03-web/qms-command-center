@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "beadd734ba518a80d773",
+  "position": {
+    "x": 14.814814814814813,
+    "y": 388.88888888888886,
+    "z": 8000,
+    "height": 303.7037037037037,
+    "width": 596.2962962962963,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Calibration"
+                    }
+                  },
+                  "Property": "EvaluatorName"
+                }
+              },
+              "queryRef": "Fact_Calibration.EvaluatorName",
+              "nativeQueryRef": "EvaluatorName"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Calibrations"
+                }
+              },
+              "queryRef": "_Measures.Calibrations",
+              "nativeQueryRef": "Calibrations"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Calibrations Outside Tolerance"
+                }
+              },
+              "queryRef": "_Measures.Calibrations Outside Tolerance",
+              "nativeQueryRef": "Calibrations Outside Tolerance"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Calibration Precision %"
+                }
+              },
+              "queryRef": "_Measures.Calibration Precision %",
+              "nativeQueryRef": "Calibration Precision %"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Precision by evaluator'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Trebuchet MS'''"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

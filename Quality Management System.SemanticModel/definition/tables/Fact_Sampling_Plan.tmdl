@@ -1,0 +1,138 @@
+table Fact_Sampling_Plan
+	lineageTag: 06d8af6b-82c1-4906-b0e9-74afc0ff945e
+
+	column SamplingPlanID
+		dataType: string
+		lineageTag: 2ae04e3a-4d04-481b-a31c-0c432acd47a7
+		summarizeBy: none
+		sourceColumn: SamplingPlanID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: string
+		lineageTag: 2359d21f-a7fa-43c9-a141-b7f35509ae55
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodStart
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dada0db9-655d-47f7-81b3-65187cbc0fc3
+		summarizeBy: none
+		sourceColumn: PeriodStart
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PeriodEnd
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d00c7c72-0c47-4b76-bdef-a58d07970507
+		summarizeBy: none
+		sourceColumn: PeriodEnd
+
+		variation Variation
+			isDefault
+			relationship: 107946c9-6095-4c34-8280-582fbfb51956
+			defaultHierarchy: LocalDateTable_33f0c170-9327-41ea-a43f-97c690169051.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Site
+		dataType: string
+		lineageTag: 25cd326f-66e5-472e-bb80-7902b5770431
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: 624425e5-91c2-42ee-b8c8-d7bab8a8556f
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SamplingTechnique
+		dataType: string
+		lineageTag: ebffbc7b-4752-443b-9e7a-a85fe29af761
+		summarizeBy: none
+		sourceColumn: SamplingTechnique
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TargetAuditCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ce26af5-5f65-46e2-9b52-0c88de4688d5
+		summarizeBy: sum
+		sourceColumn: TargetAuditCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AttainmentTargetPct
+		dataType: double
+		lineageTag: 4d1fcb17-e8de-42f8-8e98-27c4610b3da4
+		summarizeBy: sum
+		sourceColumn: AttainmentTargetPct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PlanOwnerRole
+		dataType: string
+		lineageTag: bd2c7732-ea3f-4e4f-a9e9-43b6fb0115c3
+		summarizeBy: none
+		sourceColumn: PlanOwnerRole
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Sampling_Plan = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_Sampling_Plan.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"SamplingPlanID", type text}, {"YearMonth", type text},
+				        {"PeriodStart", type date}, {"PeriodEnd", type date},
+				        {"Site", type text}, {"Channel", type text}, {"SamplingTechnique", type text},
+				        {"TargetAuditCount", Int64.Type}, {"AttainmentTargetPct", type number}, {"PlanOwnerRole", type text}
+				    }),
+				    Clean = Table.SelectRows(Types, each [SamplingPlanID] <> null and [SamplingPlanID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"SamplingPlanID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,51 @@
+table Parameter
+	lineageTag: cccb5c1a-64d6-402c-8581-cd9168ae539a
+
+	column Parameter
+		isHidden
+		lineageTag: b7082e9c-f20d-444b-9310-c6c8c5c04265
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: a2f7be96-b5a0-4dee-9134-1dd3c8c35a7a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: d1f37ddd-ec67-43cb-ba18-18cf20952047
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("Level1Product", NAMEOF('Dim_TCD'[Level1Product]), 0),
+				    ("Level2SubCategory", NAMEOF('Dim_TCD'[Level2SubCategory]), 1),
+				    ("Level3ContactReason", NAMEOF('Dim_TCD'[Level3ContactReason]), 2),
+				    ("Level4ReasonDetail", NAMEOF('Dim_TCD'[Level4ReasonDetail]), 3)
+				}
+
+	annotation PBI_Id = d8e7465ac418413a89ce99d55abfa26b
+

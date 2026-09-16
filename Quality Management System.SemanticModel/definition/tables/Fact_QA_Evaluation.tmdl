@@ -1,0 +1,777 @@
+table Fact_QA_Evaluation
+	lineageTag: ecf66dd8-7416-4ad8-ac21-00b31a645702
+
+	column EvaluationID
+		dataType: string
+		lineageTag: 85b49f7c-f2e7-43ed-bc6d-78dc1cc57838
+		summarizeBy: none
+		sourceColumn: EvaluationID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactID
+		dataType: string
+		lineageTag: 4b518b20-b8f0-43a1-a381-778a5a21b92c
+		summarizeBy: none
+		sourceColumn: ContactID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column InteractionID
+		dataType: string
+		lineageTag: 2a9dad35-6b0f-439e-a677-a55539ccf109
+		summarizeBy: none
+		sourceColumn: InteractionID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CaseID
+		dataType: string
+		lineageTag: 51f7e97d-d27f-43e4-97e3-f139d5a70587
+		summarizeBy: none
+		sourceColumn: CaseID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormVersion
+		dataType: string
+		lineageTag: 31e64d39-a280-4f08-a8ed-f156f51a47eb
+		summarizeBy: none
+		sourceColumn: FormVersion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluationType
+		dataType: string
+		lineageTag: a47bf350-5bea-496f-88ca-152573bcfdd9
+		summarizeBy: none
+		sourceColumn: EvaluationType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatedDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30839f11-7be7-48f9-812e-2700a28b8433
+		summarizeBy: none
+		sourceColumn: EvaluatedDatetime
+
+		variation Variation
+			isDefault
+			relationship: 81d51d5c-6379-461d-b86b-40f44931b726
+			defaultHierarchy: LocalDateTable_9274d622-f58d-4e04-bba1-e8d9bd3e25a3.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatedDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 724665d7-3a13-4862-a6d0-072c5b4cafba
+		summarizeBy: none
+		sourceColumn: EvaluatedDate
+
+		variation Variation
+			isDefault
+			relationship: d197d779-f668-451e-8418-0812152fadfb
+			defaultHierarchy: LocalDateTable_52332cdf-753b-4f9a-b20e-1f96c6862a3c.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b23a6435-23a6-471d-8505-7956d0653be3
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 93a39fe4-05cf-4adf-bd83-c129813a572d
+		summarizeBy: none
+		sourceColumn: ContactDatetime
+
+		variation Variation
+			isDefault
+			relationship: 9f51e79e-075c-4d33-9dde-e74c30e20da7
+			defaultHierarchy: LocalDateTable_38bcf33c-c2ee-4ffb-8d8c-c528d4effa59.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: 8a6a3136-8c06-4f89-a463-3735b992875d
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QueueName
+		dataType: string
+		lineageTag: 4df8adac-fe8d-4a1e-a70e-c6a169c14950
+		summarizeBy: none
+		sourceColumn: QueueName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 40ce64fc-e91d-4715-ae2a-8c8f14153919
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marketplace
+		dataType: string
+		lineageTag: a5090355-846c-4abe-8f7a-bead4e03d3e6
+		summarizeBy: none
+		sourceColumn: Marketplace
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Language
+		dataType: string
+		lineageTag: 2d1927dc-e649-4be5-b18e-f69b5e7f4b4d
+		summarizeBy: none
+		sourceColumn: Language
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: string
+		lineageTag: 61e1ed65-ce7d-47fd-a738-5449077a97c8
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LDAP
+		dataType: string
+		lineageTag: da849642-4870-406a-a2ca-6c8caf7fe977
+		summarizeBy: none
+		sourceColumn: LDAP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorID
+		dataType: string
+		lineageTag: ebebaf80-187a-4959-b6f7-01ee56ebf5a4
+		summarizeBy: none
+		sourceColumn: SupervisorID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatorEmployeeID
+		dataType: string
+		lineageTag: b846e7fa-d158-41c4-a154-32ff87c9a2f1
+		summarizeBy: none
+		sourceColumn: EvaluatorEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QualityAnalystID
+		dataType: string
+		lineageTag: bc4ccbe7-2d5f-49fc-a059-d78e12282412
+		summarizeBy: none
+		sourceColumn: QualityAnalystID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgentTenureDaysAtContact
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c160034-064b-42de-9ff8-e9ebefa318a6
+		summarizeBy: sum
+		sourceColumn: AgentTenureDaysAtContact
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNewHireAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 100df1b8-4a03-4253-9edd-8a3272365e1d
+		summarizeBy: none
+		sourceColumn: IsNewHireAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdLeafKey
+		dataType: string
+		lineageTag: 4ed7e30c-a72a-4a6b-bdbb-f7737637ede1
+		summarizeBy: none
+		sourceColumn: TcdLeafKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level1Product
+		dataType: string
+		lineageTag: edf7a21b-83b3-4347-97f4-90b3ace08677
+		summarizeBy: none
+		sourceColumn: Level1Product
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level3ContactReason
+		dataType: string
+		lineageTag: 9d8fd154-99cd-4733-a3d6-404915c49ebd
+		summarizeBy: none
+		sourceColumn: Level3ContactReason
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Disposition
+		dataType: string
+		lineageTag: 6b8d31f6-f0dc-4a99-9b2f-45c2ae77853c
+		summarizeBy: none
+		sourceColumn: Disposition
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HandleTimeSec
+		dataType: int64
+		formatString: 0
+		lineageTag: 147ed978-3f37-4bcd-9a43-7881bc2cd1d2
+		summarizeBy: sum
+		sourceColumn: HandleTimeSec
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CsatScore
+		dataType: double
+		formatString: 0
+		lineageTag: fb59c16f-acb8-440c-8a95-1299826b862b
+		summarizeBy: sum
+		sourceColumn: CsatScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDsat
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c497bd5b-34c8-4c09-9ebe-cb09fad0b99f
+		summarizeBy: none
+		sourceColumn: IsDsat
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsResolved
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f28278ec-9319-4fb5-89b7-b4ded7393ed6
+		summarizeBy: none
+		sourceColumn: IsResolved
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP01_SecurityVerification
+		dataType: string
+		lineageTag: e410abac-57bd-4fe9-875b-96bac004967b
+		summarizeBy: none
+		sourceColumn: QP01_SecurityVerification
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP02_PrivacyGdpr
+		dataType: string
+		lineageTag: bbbe4241-6ff2-4846-b4fd-13591385c8ca
+		summarizeBy: none
+		sourceColumn: QP02_PrivacyGdpr
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP03_PaymentRefundIntegrity
+		dataType: string
+		lineageTag: fd3ff867-2ad1-4a88-9b5c-2ec340f195bc
+		summarizeBy: none
+		sourceColumn: QP03_PaymentRefundIntegrity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP04_PolicyDisclosure
+		dataType: string
+		lineageTag: 13d7d0d4-bda5-4551-ae3e-95fb5261ec74
+		summarizeBy: none
+		sourceColumn: QP04_PolicyDisclosure
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP05_IssueIdentification
+		dataType: string
+		lineageTag: fb1df462-67d1-4cea-88f5-afd64ec3dcb2
+		summarizeBy: none
+		sourceColumn: QP05_IssueIdentification
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP06_ResolutionSop
+		dataType: string
+		lineageTag: 7a234365-251f-41c2-b311-a9bc964052f4
+		summarizeBy: none
+		sourceColumn: QP06_ResolutionSop
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP07_FcrAttempt
+		dataType: string
+		lineageTag: 40de56e5-4d68-4e8a-9562-ee3c83a12470
+		summarizeBy: none
+		sourceColumn: QP07_FcrAttempt
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP08_CourtesyEmpathy
+		dataType: string
+		lineageTag: f7ed0a3b-5516-45fb-aa04-791c9d59ae99
+		summarizeBy: none
+		sourceColumn: QP08_CourtesyEmpathy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP09_OwnershipControl
+		dataType: string
+		lineageTag: 89c0526e-32f3-4f01-8439-93bc7bbda16c
+		summarizeBy: none
+		sourceColumn: QP09_OwnershipControl
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP10_CorrectInformation
+		dataType: string
+		lineageTag: bab24cc1-448f-45f0-af41-3ca911776bb2
+		summarizeBy: none
+		sourceColumn: QP10_CorrectInformation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP11_EscalationAccuracy
+		dataType: string
+		lineageTag: 67c9df5b-92c1-452b-a20a-ab6ca710b36d
+		summarizeBy: none
+		sourceColumn: QP11_EscalationAccuracy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP12_ExpectationNextSteps
+		dataType: string
+		lineageTag: ccd1efa0-03cd-4baf-87ca-aa7875715392
+		summarizeBy: none
+		sourceColumn: QP12_ExpectationNextSteps
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP13_CrmDocumentation
+		dataType: string
+		lineageTag: ad9acfd4-4578-48ec-88b0-677b0ecefc58
+		summarizeBy: none
+		sourceColumn: QP13_CrmDocumentation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP14_TcdAccuracy
+		dataType: string
+		lineageTag: 353415c6-fb80-4eda-9b56-bce631729145
+		summarizeBy: none
+		sourceColumn: QP14_TcdAccuracy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP15_KbAdherence
+		dataType: string
+		lineageTag: 5e6193d5-43b1-46ce-91ad-35dd273c8d94
+		summarizeBy: none
+		sourceColumn: QP15_KbAdherence
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP16_HoldTransferProtocol
+		dataType: string
+		lineageTag: 8f40a23e-3f8b-4c62-9998-36fb99a02bf1
+		summarizeBy: none
+		sourceColumn: QP16_HoldTransferProtocol
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP17_DispositionAccuracy
+		dataType: string
+		lineageTag: 42029854-0568-4e6f-b59b-1e2d3f1111b2
+		summarizeBy: none
+		sourceColumn: QP17_DispositionAccuracy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP18_RequiredOfferPath
+		dataType: string
+		lineageTag: 71523574-4fe2-4955-ac5b-70813c971afd
+		summarizeBy: none
+		sourceColumn: QP18_RequiredOfferPath
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP19_OpeningBranding
+		dataType: string
+		lineageTag: ea0dbde0-f522-4b13-8435-ac38dc39f0c5
+		summarizeBy: none
+		sourceColumn: QP19_OpeningBranding
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QP20_ClosingRecap
+		dataType: string
+		lineageTag: e2ce2911-1324-4a6e-8d3a-6c03deac08d3
+		summarizeBy: none
+		sourceColumn: QP20_ClosingRecap
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScoringParametersApplicable
+		dataType: int64
+		formatString: 0
+		lineageTag: 37b7a259-7349-4808-9ca2-0df1a0660358
+		summarizeBy: sum
+		sourceColumn: ScoringParametersApplicable
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScoringParametersPassed
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d7b9092-27fb-47e3-be8a-8414db291893
+		summarizeBy: sum
+		sourceColumn: ScoringParametersPassed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientQualityScore
+		dataType: double
+		lineageTag: 897bf8b3-582c-4296-8bec-6d310f8cfeac
+		summarizeBy: sum
+		sourceColumn: ClientQualityScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_QA_Evaluation","TableItemName":"ClientQualityScore (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column HasCustomerCriticalError
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1ccb6f4c-c8ab-47ca-9e2f-611ab1e8b2bf
+		summarizeBy: none
+		sourceColumn: HasCustomerCriticalError
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasBusinessCriticalError
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 323fb60a-e31d-42a3-b8df-7814d4eea11e
+		summarizeBy: none
+		sourceColumn: HasBusinessCriticalError
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasComplianceCriticalError
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7e7535f8-8974-4b09-b025-23f837b90d55
+		summarizeBy: none
+		sourceColumn: HasComplianceCriticalError
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFatalAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 296bb49c-4c8c-42f4-9438-b7be36302fe1
+		summarizeBy: none
+		sourceColumn: IsFatalAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFailedAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ad8f961f-f200-46e3-ab6b-a8c712c2c39e
+		summarizeBy: none
+		sourceColumn: IsFailedAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FailedParameterList
+		dataType: string
+		lineageTag: 3a708729-1539-42ed-b6ec-8da98c905936
+		summarizeBy: none
+		sourceColumn: FailedParameterList
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FailedParameterCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a98c265-c4a7-4358-a7e8-6914d696ece9
+		summarizeBy: sum
+		sourceColumn: FailedParameterCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ErrorCommitted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 090b3e20-5691-48f0-a390-84cce1efd0a0
+		summarizeBy: none
+		sourceColumn: ErrorCommitted
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedbackRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d48d89a2-189e-4a0e-afdd-2ac5b2e5ddc7
+		summarizeBy: none
+		sourceColumn: FeedbackRequired
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedbackDueDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 51d09ef6-b316-4bf2-98a9-f08f99c9767a
+		summarizeBy: none
+		sourceColumn: FeedbackDueDatetime
+
+		variation Variation
+			isDefault
+			relationship: 67789e95-fbe2-4732-a5a1-14e8642f3e2f
+			defaultHierarchy: LocalDateTable_50fd83a2-d745-4a30-9591-ac00c508542d.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ClientQualityScore (bins)' = ```
+			VAR __Count = 10
+			
+			VAR __Min = MIN('Fact_QA_Evaluation'[ClientQualityScore])
+			
+			VAR __Max = MAX('Fact_QA_Evaluation'[ClientQualityScore])
+			
+			VAR __Difference = (__Max - __Min)
+			
+			VAR __Size = IF(__Difference > 0, __Difference / __Count, 1)
+			
+			VAR __BinNumber = 
+				IF(
+					ISBLANK('Fact_QA_Evaluation'[ClientQualityScore]),
+					BLANK(),
+					ROUNDDOWN(('Fact_QA_Evaluation'[ClientQualityScore] - __Min) / __Size, 0)
+				)
+			
+			RETURN
+				IF(
+					ISBLANK('Fact_QA_Evaluation'[ClientQualityScore]),
+					BLANK(),
+					__Min + (MIN(__BinNumber, __Count - 1) * __Size)
+				)
+			```
+		lineageTag: a72a49a4-10c5-412d-acee-7823742d25db
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_QA_Evaluation"
+				          }
+				        },
+				        "Property": "ClientQualityScore"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_QA_Evaluation"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"ClientQualityScore"}}],"BinItem":{"Expression":{"Member":{"Expression":{"Discretize":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"ClientQualityScore"}},"Count":10}},"Member":"Min"}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Fact_QA_Evaluation = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_QA_Evaluation.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"EvaluationID", type text}, {"ContactID", type text}, {"InteractionID", type text}, {"CaseID", type text},
+				        {"FormVersion", type text}, {"EvaluationType", type text},
+				        {"EvaluatedDatetime", type datetime}, {"EvaluatedDate", type date}, {"DateKey", Int64.Type},
+				        {"ContactDatetime", type datetime}, {"Channel", type text}, {"QueueName", type text},
+				        {"Site", type text}, {"Marketplace", type text}, {"Language", type text},
+				        {"EmployeeID", type text}, {"LDAP", type text}, {"SupervisorID", type text},
+				        {"EvaluatorEmployeeID", type text}, {"QualityAnalystID", type text},
+				        {"AgentTenureDaysAtContact", Int64.Type}, {"IsNewHireAudit", type logical},
+				        {"TcdLeafKey", type text}, {"Level1Product", type text}, {"Level3ContactReason", type text},
+				        {"Disposition", type text}, {"HandleTimeSec", Int64.Type}, {"CsatScore", type number},
+				        {"IsDsat", type logical}, {"IsResolved", type logical},
+				        {"QP01_SecurityVerification", type text}, {"QP02_PrivacyGdpr", type text},
+				        {"QP03_PaymentRefundIntegrity", type text}, {"QP04_PolicyDisclosure", type text},
+				        {"QP05_IssueIdentification", type text}, {"QP06_ResolutionSop", type text},
+				        {"QP07_FcrAttempt", type text}, {"QP08_CourtesyEmpathy", type text},
+				        {"QP09_OwnershipControl", type text}, {"QP10_CorrectInformation", type text},
+				        {"QP11_EscalationAccuracy", type text}, {"QP12_ExpectationNextSteps", type text},
+				        {"QP13_CrmDocumentation", type text}, {"QP14_TcdAccuracy", type text},
+				        {"QP15_KbAdherence", type text}, {"QP16_HoldTransferProtocol", type text},
+				        {"QP17_DispositionAccuracy", type text}, {"QP18_RequiredOfferPath", type text},
+				        {"QP19_OpeningBranding", type text}, {"QP20_ClosingRecap", type text},
+				        {"ScoringParametersApplicable", Int64.Type}, {"ScoringParametersPassed", Int64.Type},
+				        {"ClientQualityScore", type number},
+				        {"HasCustomerCriticalError", type logical}, {"HasBusinessCriticalError", type logical},
+				        {"HasComplianceCriticalError", type logical},
+				        {"IsFatalAudit", type logical}, {"IsFailedAudit", type logical},
+				        {"FailedParameterList", type text}, {"FailedParameterCount", Int64.Type},
+				        {"ErrorCommitted", type logical}, {"FeedbackRequired", type logical},
+				        {"FeedbackDueDatetime", type datetime}
+				    }),
+				    Clean = Table.SelectRows(Types, each [EvaluationID] <> null and [EvaluationID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"EvaluationID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

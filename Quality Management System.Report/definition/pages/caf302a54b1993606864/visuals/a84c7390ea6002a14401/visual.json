@@ -1,0 +1,231 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a84c7390ea6002a14401",
+  "position": {
+    "x": 0,
+    "y": 200.416983085951,
+    "z": 6000,
+    "height": 880.403175698999,
+    "width": 1920.6627545736969,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Coaching"
+                    }
+                  },
+                  "Property": "CoachingID"
+                }
+              },
+              "queryRef": "Fact_Coaching.CoachingID",
+              "nativeQueryRef": "CoachingID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Coaching"
+                    }
+                  },
+                  "Property": "EvaluationID"
+                }
+              },
+              "queryRef": "Fact_Coaching.EvaluationID",
+              "nativeQueryRef": "EvaluationID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Employee"
+                    }
+                  },
+                  "Property": "EmployeeName"
+                }
+              },
+              "queryRef": "Dim_Employee.EmployeeName",
+              "nativeQueryRef": "EmployeeName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Employee"
+                    }
+                  },
+                  "Property": "QualityAnalystName"
+                }
+              },
+              "queryRef": "Dim_Employee.QualityAnalystName",
+              "nativeQueryRef": "QualityAnalystName"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_Coaching"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "CoachingDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Fact_Coaching.CoachingDatetime.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "CoachingDatetime Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_Coaching"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "CoachingDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Fact_Coaching.CoachingDatetime.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "CoachingDatetime Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_Coaching"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "CoachingDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Fact_Coaching.CoachingDatetime.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "CoachingDatetime Day"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Coaching"
+                    }
+                  },
+                  "Property": "DeliveryChannel"
+                }
+              },
+              "queryRef": "Dim_Coaching.DeliveryChannel",
+              "nativeQueryRef": "DeliveryChannel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Coaching"
+                    }
+                  },
+                  "Property": "IsSlaMet"
+                }
+              },
+              "queryRef": "Fact_Coaching.IsSlaMet",
+              "nativeQueryRef": "IsSlaMet"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Coaching"
+                    }
+                  },
+                  "Property": "IsFatalRelated"
+                }
+              },
+              "queryRef": "Fact_Coaching.IsFatalRelated",
+              "nativeQueryRef": "IsFatalRelated"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Coaching"
+                        }
+                      },
+                      "Property": "FeedbackLagHours"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_Coaching.FeedbackLagHours)",
+              "nativeQueryRef": "Sum of FeedbackLagHours"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

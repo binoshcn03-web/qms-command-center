@@ -1,0 +1,218 @@
+table Fact_QA_Evaluation_Line
+	lineageTag: b7d3d8b3-35f9-47cc-90a3-ef2d074e6ef2
+
+	column EvaluationID
+		dataType: string
+		lineageTag: e5d10adc-1a66-416c-b499-3b2e07e3c394
+		summarizeBy: none
+		sourceColumn: EvaluationID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactID
+		dataType: string
+		lineageTag: 1f68e7e0-e91f-4564-9eac-f1014fffad85
+		summarizeBy: none
+		sourceColumn: ContactID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: string
+		lineageTag: a341937c-b7a6-4801-b82a-e950c33f8990
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatorEmployeeID
+		dataType: string
+		lineageTag: e762f6ab-cae3-490e-9989-7c6750fdead6
+		summarizeBy: none
+		sourceColumn: EvaluatorEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c23769b-e4f6-4108-9ce7-082544cb6d9d
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: f6a0d6e0-8e33-4297-881c-e870ae337ca3
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: f37c7307-c5d4-4559-974a-962a1c50ec3b
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdLeafKey
+		dataType: string
+		lineageTag: 2184c0d9-9a2b-423b-973b-a3a69223945e
+		summarizeBy: none
+		sourceColumn: TcdLeafKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluationType
+		dataType: string
+		lineageTag: 9ca38708-0f5d-46a8-9922-b5fb4490afbc
+		summarizeBy: none
+		sourceColumn: EvaluationType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNewHireAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8779f98b-65db-4dea-a811-d3e4242cb8f8
+		summarizeBy: none
+		sourceColumn: IsNewHireAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFailedAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f1ba7f8c-708a-49ba-bfe2-8231ec38ac53
+		summarizeBy: none
+		sourceColumn: IsFailedAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFatalAudit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 83b50cbd-f36d-4655-92e4-c484ad253b79
+		summarizeBy: none
+		sourceColumn: IsFatalAudit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParameterColumn
+		dataType: string
+		lineageTag: 6b9e346b-d54c-436e-9cb7-6bb0c78ae53a
+		summarizeBy: none
+		sourceColumn: ParameterColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rating
+		dataType: string
+		lineageTag: ceabad99-4d6c-42e6-9278-9e1476493714
+		summarizeBy: none
+		sourceColumn: Rating
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParameterID
+		dataType: string
+		lineageTag: 3ddf7a9f-abab-4edf-8a6b-0eaa62fb9d42
+		summarizeBy: none
+		sourceColumn: ParameterID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDefect
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 97563b11-2918-4847-9b51-ed91508ccc94
+		summarizeBy: none
+		sourceColumn: IsDefect
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsApplicable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: da759072-1897-4fec-b803-fe1d9f005291
+		summarizeBy: none
+		sourceColumn: IsApplicable
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParameterKey =
+			
+			VAR s = Fact_QA_Evaluation_Line[ParameterID]
+			RETURN
+			    IF (
+			        LEN ( s ) = 4 && MID ( s, 3, 1 ) <> "-",
+			        LEFT ( s, 2 ) & "-" & RIGHT ( s, 2 ),
+			        s
+			    )
+		lineageTag: 602243c0-e209-4428-82fa-bc187dfa5d5e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_QA_Evaluation_Line = m
+		mode: import
+		source =
+				let
+				    Source = Fact_QA_Evaluation,
+				    AllNames = Table.ColumnNames(Source),
+				    QPCols = List.Select(AllNames, each Text.StartsWith(_, "QP")),
+				    IdWanted = {
+				        "EvaluationID", "ContactID", "EmployeeID", "EvaluatorEmployeeID",
+				        "DateKey", "Channel", "Site", "TcdLeafKey",
+				        "EvaluationType", "IsNewHireAudit", "IsFailedAudit", "IsFatalAudit"
+				    },
+				    IdCols = List.Intersect({IdWanted, AllNames}),
+				    Keep = Table.SelectColumns(Source, List.Distinct(IdCols & QPCols)),
+				    Unpivoted = Table.UnpivotOtherColumns(Keep, IdCols, "ParameterColumn", "Rating"),
+				    AddID = Table.AddColumn(Unpivoted, "ParameterID", each Text.Start(Text.From([ParameterColumn]), 4), type text),
+				    AddDefect = Table.AddColumn(AddID, "IsDefect", each Text.From([Rating]) = "No", type logical),
+				    AddAppl = Table.AddColumn(AddDefect, "IsApplicable", each Text.From([Rating]) <> "NA", type logical)
+				in
+				    AddAppl
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

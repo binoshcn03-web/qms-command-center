@@ -1,0 +1,326 @@
+table Dim_TCD
+	lineageTag: 3f610953-8f1e-4a02-80dd-dd0862853dec
+
+	column TcdLeafKey
+		dataType: string
+		lineageTag: 1b34a964-38a9-4187-b714-b23334345fb5
+		summarizeBy: none
+		sourceColumn: TcdLeafKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdL1Code
+		dataType: string
+		lineageTag: 49f235d3-c956-4686-afe3-8eb09bedc212
+		summarizeBy: none
+		sourceColumn: TcdL1Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdL2Code
+		dataType: string
+		lineageTag: 71910d01-94b7-4907-8c36-771a4d142785
+		summarizeBy: none
+		sourceColumn: TcdL2Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdL3Code
+		dataType: string
+		lineageTag: 07e0b842-37d8-41c3-8c2d-6c15728766ad
+		summarizeBy: none
+		sourceColumn: TcdL3Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TcdL4Code
+		dataType: string
+		lineageTag: 8fbcc9cd-c6fc-4798-9501-8fc0bc1366fb
+		summarizeBy: none
+		sourceColumn: TcdL4Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level1Product
+		dataType: string
+		lineageTag: 6a9fa092-abea-4fdc-90d7-93e79dfb7a72
+		summarizeBy: none
+		sourceColumn: Level1Product
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level2SubCategory
+		dataType: string
+		lineageTag: 8310448f-753a-431a-8bc4-1209ccb493bc
+		summarizeBy: none
+		sourceColumn: Level2SubCategory
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level3ContactReason
+		dataType: string
+		lineageTag: 5b65575d-d0b9-4183-9001-583c0870fa61
+		summarizeBy: none
+		sourceColumn: Level3ContactReason
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level4ReasonDetail
+		dataType: string
+		lineageTag: f78ec9a5-f98c-4baa-9865-c930cd79ade6
+		summarizeBy: none
+		sourceColumn: Level4ReasonDetail
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HierarchyPath
+		dataType: string
+		lineageTag: fa56e279-d31e-4ac1-aa96-a82c8724db04
+		summarizeBy: none
+		sourceColumn: HierarchyPath
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HierarchyDepth
+		dataType: int64
+		formatString: 0
+		lineageTag: ee714a73-9bab-456a-8937-7bed180baf75
+		summarizeBy: sum
+		sourceColumn: HierarchyDepth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsTopDriver
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6cef8588-0d26-4ea3-8d1b-b87aef10cb0e
+		summarizeBy: none
+		sourceColumn: IsTopDriver
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInScope
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c87c2844-f986-49ad-9cc6-6d95b17ecb2b
+		summarizeBy: none
+		sourceColumn: IsInScope
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 648de94a-9a0a-4de1-9548-0c4b0b768eee
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImpactTier
+		dataType: string
+		lineageTag: 35983548-b7cf-4610-82f2-ae8cd9aea2be
+		summarizeBy: none
+		sourceColumn: ImpactTier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPrimeRelated
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 86db0382-8034-45c0-a8a0-fa82180c36d1
+		summarizeBy: none
+		sourceColumn: IsPrimeRelated
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFinancial
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 62328a1c-1239-47f7-9b3f-e0c1f63856fd
+		summarizeBy: none
+		sourceColumn: IsFinancial
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsComplianceSensitive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 486a898f-a0d1-4f46-b7aa-5953f7e5a3de
+		summarizeBy: none
+		sourceColumn: IsComplianceSensitive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsComplaint
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0c94b361-6158-43b4-b8e2-ecc5448f612a
+		summarizeBy: none
+		sourceColumn: IsComplaint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepeatContactRisk
+		dataType: string
+		lineageTag: dd608a5a-2f0a-483b-8a31-66872676e169
+		summarizeBy: none
+		sourceColumn: RepeatContactRisk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypicalAhtSec
+		dataType: int64
+		formatString: 0
+		lineageTag: 78ec2ab2-400b-41ac-98d4-2cf66007feab
+		summarizeBy: sum
+		sourceColumn: TypicalAhtSec
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DefaultChannelMix
+		dataType: string
+		lineageTag: 790b01d8-c5d0-4148-ba61-63c18611ce45
+		summarizeBy: none
+		sourceColumn: DefaultChannelMix
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CopqClassHint
+		dataType: string
+		lineageTag: 64c43bde-24a0-41e2-98fd-1b2b15009345
+		summarizeBy: none
+		sourceColumn: CopqClassHint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QualityFocusAttribute
+		dataType: string
+		lineageTag: 5de8cb28-8e35-4794-8ab8-d9151e1b1689
+		summarizeBy: none
+		sourceColumn: QualityFocusAttribute
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CatalogTcdCount
+		dataType: int64
+		formatString: 0
+		lineageTag: addd07f7-e6d0-4fd3-a327-39c04516bbfb
+		summarizeBy: sum
+		sourceColumn: CatalogTcdCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column InScopeTcdCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 00319c0a-ad44-4f67-9430-1a79cb0b9b55
+		summarizeBy: sum
+		sourceColumn: InScopeTcdCount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MixWeightHint
+		dataType: double
+		lineageTag: 2ee78040-ed72-403e-b88a-9dd6c58dbced
+		summarizeBy: sum
+		sourceColumn: MixWeightHint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SortOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f7d36d2-7e1b-483c-88f7-0f3e80b49bb0
+		summarizeBy: sum
+		sourceColumn: SortOrder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_TCD = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_TCD.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"TcdLeafKey", type text}, {"TcdL1Code", type text}, {"TcdL2Code", type text},
+				        {"TcdL3Code", type text}, {"TcdL4Code", type text},
+				        {"Level1Product", type text}, {"Level2SubCategory", type text},
+				        {"Level3ContactReason", type text}, {"Level4ReasonDetail", type text},
+				        {"HierarchyPath", type text}, {"HierarchyDepth", Int64.Type},
+				        {"IsTopDriver", type logical}, {"IsInScope", type logical}, {"IsActive", type logical},
+				        {"ImpactTier", type text}, {"IsPrimeRelated", type logical}, {"IsFinancial", type logical},
+				        {"IsComplianceSensitive", type logical}, {"IsComplaint", type logical},
+				        {"RepeatContactRisk", type text}, {"TypicalAhtSec", Int64.Type}, {"DefaultChannelMix", type text},
+				        {"CopqClassHint", type text}, {"QualityFocusAttribute", type text},
+				        {"CatalogTcdCount", Int64.Type}, {"InScopeTcdCount", Int64.Type},
+				        {"MixWeightHint", type number}, {"SortOrder", Int64.Type}
+				    }),
+				    Clean = Table.SelectRows(Types, each [TcdLeafKey] <> null and [TcdLeafKey] <> ""),
+				    Distinct = Table.Distinct(Clean, {"TcdLeafKey"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

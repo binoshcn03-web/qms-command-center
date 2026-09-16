@@ -1,0 +1,238 @@
+table Dim_Coaching
+	lineageTag: fd669c30-3cb6-4876-983b-8f4b7b09c8e8
+
+	column CoachingActionID
+		dataType: string
+		lineageTag: a23bd493-f723-4582-9270-a861a39962e2
+		summarizeBy: none
+		sourceColumn: CoachingActionID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionName
+		dataType: string
+		lineageTag: f98b9f3d-f39e-4f79-a599-f75cd64f7716
+		summarizeBy: none
+		sourceColumn: ActionName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionFamily
+		dataType: string
+		lineageTag: 172ae7c4-3c12-4c94-9178-8f7bc9c7be6a
+		summarizeBy: none
+		sourceColumn: ActionFamily
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeliveryChannel
+		dataType: string
+		lineageTag: 2beaf9e0-b887-447a-aafb-c9c8160776f1
+		summarizeBy: none
+		sourceColumn: DeliveryChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TriggerEvent
+		dataType: string
+		lineageTag: ead67324-0fb8-4132-ac07-729225ed1b07
+		summarizeBy: none
+		sourceColumn: TriggerEvent
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppliesToCriticality
+		dataType: string
+		lineageTag: fba6fc4f-65f0-497e-9516-a0ba27ee97f2
+		summarizeBy: none
+		sourceColumn: AppliesToCriticality
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IshikawaPillar
+		dataType: string
+		lineageTag: 066cb817-fd68-4dea-9a17-68f73008994a
+		summarizeBy: none
+		sourceColumn: IshikawaPillar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OwnerRole
+		dataType: string
+		lineageTag: 03874621-abaf-4855-b1f8-00704ac9c2e1
+		summarizeBy: none
+		sourceColumn: OwnerRole
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequiresSupervisor
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 11f14118-444c-4e1d-9fcf-fc472c6eaa13
+		summarizeBy: none
+		sourceColumn: RequiresSupervisor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequiresQaOwner
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d8c36953-9e99-4df9-839f-ffc81a35daeb
+		summarizeBy: none
+		sourceColumn: RequiresQaOwner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SlaFeedbackHours
+		dataType: int64
+		formatString: 0
+		lineageTag: a7cc9bc6-8310-44bc-a554-a588929efd08
+		summarizeBy: none
+		sourceColumn: SlaFeedbackHours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedbackSlaApplies
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0b7307a1-7861-446c-8515-2f2ff6c61b2d
+		summarizeBy: none
+		sourceColumn: FeedbackSlaApplies
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypicalEffortMinutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 39ab9fbb-ccb9-4a5d-b048-d580d303797d
+		summarizeBy: none
+		sourceColumn: TypicalEffortMinutes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypicalCostUsd
+		dataType: double
+		formatString: 0
+		lineageTag: cb647bda-ff78-435b-96eb-f77304bdccca
+		summarizeBy: none
+		sourceColumn: TypicalCostUsd
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 3a51df68-e7e5-4077-ba7e-459e17ad2424
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExpectedScoreLiftHint
+		dataType: double
+		lineageTag: 5c827520-91b1-4ba9-b1ca-7c935afeb27a
+		summarizeBy: none
+		sourceColumn: ExpectedScoreLiftHint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BestQmLink
+		dataType: string
+		lineageTag: d71f3517-d95b-4ba9-b183-e8efe92b8525
+		summarizeBy: none
+		sourceColumn: BestQmLink
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AmazonUseCase
+		dataType: string
+		lineageTag: 9f563832-4d5c-4f1c-800a-11303f37ed95
+		summarizeBy: none
+		sourceColumn: AmazonUseCase
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f3a7bf75-4743-48e0-89c2-197b2b6ff6a4
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: 58ccb483-4795-47a6-97a0-0d96b5276a81
+		summarizeBy: none
+		sourceColumn: SortOrder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Coaching = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_Coaching.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"CoachingActionID", type text}, {"ActionName", type text}, {"ActionFamily", type text},
+				        {"DeliveryChannel", type text}, {"TriggerEvent", type text}, {"AppliesToCriticality", type text},
+				        {"IshikawaPillar", type text}, {"OwnerRole", type text},
+				        {"RequiresSupervisor", type logical}, {"RequiresQaOwner", type logical},
+				        {"SlaFeedbackHours", Int64.Type}, {"FeedbackSlaApplies", type logical},
+				        {"TypicalEffortMinutes", Int64.Type}, {"TypicalCostUsd", type number}, {"Currency", type text},
+				        {"ExpectedScoreLiftHint", type number}, {"BestQmLink", type text}, {"AmazonUseCase", type text},
+				        {"IsActive", type logical}, {"SortOrder", Int64.Type}
+				    }),
+				    Clean = Table.SelectRows(Types, each [CoachingActionID] <> null and [CoachingActionID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"CoachingActionID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

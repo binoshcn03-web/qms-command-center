@@ -1,0 +1,225 @@
+table Fact_Calibration
+	lineageTag: 87096e31-33d0-4cf9-830d-b5d5940f0d5d
+
+	column CalibrationID
+		dataType: string
+		lineageTag: 1d830f00-a250-4add-a1aa-5f20145bbc34
+		summarizeBy: none
+		sourceColumn: CalibrationID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluationID
+		dataType: string
+		lineageTag: fff14050-ebf4-4e55-b7d3-69811db34565
+		summarizeBy: none
+		sourceColumn: EvaluationID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactID
+		dataType: string
+		lineageTag: 64448c7c-9c77-4328-8aa3-73b1c5b8f5e7
+		summarizeBy: none
+		sourceColumn: ContactID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatorEmployeeID
+		dataType: string
+		lineageTag: 89926d7c-b9e9-4d55-8ebe-7bd45f8badf3
+		summarizeBy: none
+		sourceColumn: EvaluatorEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GaugeEmployeeID
+		dataType: string
+		lineageTag: dbd33d34-a53e-4ff9-ad2e-545a6e5ccf4e
+		summarizeBy: none
+		sourceColumn: GaugeEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalibrationDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 15efba41-007b-4d5b-9047-6ca13b236dcc
+		summarizeBy: none
+		sourceColumn: CalibrationDatetime
+
+		variation Variation
+			isDefault
+			relationship: bf4ede04-e381-4382-b854-b4aca882ae18
+			defaultHierarchy: LocalDateTable_86c0b4c1-9e7e-4852-9395-cb0cb73c5979.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 69146666-684a-4abe-ada2-b74f9b3c2f15
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormVersion
+		dataType: string
+		lineageTag: 68d65c47-4765-44e3-b80c-7652af00c784
+		summarizeBy: none
+		sourceColumn: FormVersion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatorScore
+		dataType: double
+		lineageTag: a7da0769-ea06-410a-9523-177229328459
+		summarizeBy: sum
+		sourceColumn: EvaluatorScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GaugeScore
+		dataType: double
+		lineageTag: d049fa13-8940-4adf-8822-df5f4f7fbede
+		summarizeBy: sum
+		sourceColumn: GaugeScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VariancePct
+		dataType: double
+		lineageTag: eb842700-f6d6-4c47-9716-777bab733651
+		summarizeBy: sum
+		sourceColumn: VariancePct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AbsVariancePct
+		dataType: double
+		lineageTag: fd969756-38fc-4be4-93f1-3b233685ad9d
+		summarizeBy: sum
+		sourceColumn: AbsVariancePct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TolerancePct
+		dataType: double
+		lineageTag: aee2b2e8-9898-46af-b854-4061da8fb92a
+		summarizeBy: sum
+		sourceColumn: TolerancePct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsOutsideTolerance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: af533748-1eff-443d-9655-fb0940899ef3
+		summarizeBy: none
+		sourceColumn: IsOutsideTolerance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 62859bef-8d7a-4f64-8c2e-86192c0b1c5a
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: c9f5bdc4-eddf-4e93-9e04-b962ec468a23
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluatorName =
+			
+			LOOKUPVALUE (
+			    Dim_Employee[EmployeeName],
+			    Dim_Employee[EmployeeID],
+			    Fact_Calibration[EvaluatorEmployeeID]
+			)
+		lineageTag: 46b429ad-b41a-474f-ab8b-76d1b1c3c0c9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutsideFlag =
+			
+			IF ( Fact_Calibration[IsOutsideTolerance] = TRUE (), 1, 0 )
+		formatString: 0
+		lineageTag: 0af70bec-9a3d-4706-ac13-e22637677dd1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Calibration = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_Calibration.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"CalibrationID", type text}, {"EvaluationID", type text}, {"ContactID", type text},
+				        {"EvaluatorEmployeeID", type text}, {"GaugeEmployeeID", type text},
+				        {"CalibrationDatetime", type datetime}, {"DateKey", Int64.Type}, {"FormVersion", type text},
+				        {"EvaluatorScore", type number}, {"GaugeScore", type number},
+				        {"VariancePct", type number}, {"AbsVariancePct", type number}, {"TolerancePct", type number},
+				        {"IsOutsideTolerance", type logical}, {"Site", type text}, {"Channel", type text}
+				    }),
+				    Clean = Table.SelectRows(Types, each [CalibrationID] <> null and [CalibrationID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"CalibrationID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

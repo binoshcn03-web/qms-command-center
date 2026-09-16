@@ -1,0 +1,469 @@
+table Dim_Employee
+	lineageTag: 59ed7871-e7a1-4235-95a1-9107ae06c060
+
+	column EmployeeID
+		dataType: string
+		lineageTag: 46aa29e7-00b9-4b04-b055-4519fe2ae0af
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeNumber
+		dataType: string
+		lineageTag: a489270b-b994-4974-b2d7-422f1de1e330
+		summarizeBy: none
+		sourceColumn: EmployeeNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeName
+		dataType: string
+		lineageTag: 1d4d90ba-a11a-4960-a867-8fe37ed99b70
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 05766240-8f1e-47e0-bade-91bb04d748bd
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: dbd12d25-b6d9-4cd8-9d26-c14e8c481eed
+		summarizeBy: none
+		sourceColumn: LastName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LDAP
+		dataType: string
+		lineageTag: 8545e1a3-88da-48fd-8001-aaf86001add1
+		summarizeBy: none
+		sourceColumn: LDAP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: afbb14c2-973b-41d8-84a5-25b7f89d38f0
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: 6b713c6f-c34c-4cf2-932e-dcb673ea3f3d
+		summarizeBy: none
+		sourceColumn: Role
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobBand
+		dataType: string
+		lineageTag: 251c9ab4-b436-459c-9739-6556990bfb54
+		summarizeBy: none
+		sourceColumn: JobBand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: d8c6d591-e90d-4d22-85bb-240eb048c734
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 5ccdf262-803f-4b60-b1cd-ddef1444c28b
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOB
+		dataType: string
+		lineageTag: 74af5a7d-8dcc-462c-9179-64a6456110e7
+		summarizeBy: none
+		sourceColumn: LOB
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryChannel
+		dataType: string
+		lineageTag: 8793e0f2-39fd-4fa7-bcfe-b54aa5debfbf
+		summarizeBy: none
+		sourceColumn: PrimaryChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shift
+		dataType: string
+		lineageTag: 2c5ad44d-9e2d-4717-bf2a-cab581b60edb
+		summarizeBy: none
+		sourceColumn: Shift
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TeamName
+		dataType: string
+		lineageTag: d8f17881-8bb9-4131-92f3-5500bf05bcda
+		summarizeBy: none
+		sourceColumn: TeamName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HireDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5262fde4-516e-4e1f-8f2b-c914a7acbe0c
+		summarizeBy: none
+		sourceColumn: HireDate
+
+		variation Variation
+			isDefault
+			relationship: c621e3bc-e6a8-4f47-ae44-302cf9e6877e
+			defaultHierarchy: LocalDateTable_730ce55c-d92d-41a0-8bc5-e6c6f7df1472.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TenureDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b19d285-17e4-4407-9a85-79579bbcfa37
+		summarizeBy: sum
+		sourceColumn: TenureDays
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TenureBucket
+		dataType: string
+		lineageTag: 8195c9e1-8662-4845-815a-0e77b9729818
+		summarizeBy: none
+		sourceColumn: TenureBucket
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNewHire
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b535cc4e-5d6e-479a-bf54-d14c1536ea0d
+		summarizeBy: none
+		sourceColumn: IsNewHire
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NestingDaysTarget
+		dataType: int64
+		formatString: 0
+		lineageTag: 09dd0013-a468-450f-9fbf-e5436ba473b2
+		summarizeBy: sum
+		sourceColumn: NestingDaysTarget
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NestingEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c5576c25-464b-461a-a897-3ff3fe7051fa
+		summarizeBy: none
+		sourceColumn: NestingEndDate
+
+		variation Variation
+			isDefault
+			relationship: 315f39b6-4dcf-4ad5-8402-642fbfb07e59
+			defaultHierarchy: LocalDateTable_0f948ddd-155f-4a15-bcba-0e8a92878af8.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SupervisorID
+		dataType: string
+		lineageTag: 8a6781dd-5041-4c13-936d-c138276159af
+		summarizeBy: none
+		sourceColumn: SupervisorID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupervisorName
+		dataType: string
+		lineageTag: bffc0688-7b5b-4c02-b07a-961222e73795
+		summarizeBy: none
+		sourceColumn: SupervisorName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssistantManagerID
+		dataType: string
+		lineageTag: 53803899-cf70-48e6-b9ad-fef0c81ae53b
+		summarizeBy: none
+		sourceColumn: AssistantManagerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssistantManagerName
+		dataType: string
+		lineageTag: bd636629-4390-4daa-803e-8909094ec20b
+		summarizeBy: none
+		sourceColumn: AssistantManagerName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OperationsManagerID
+		dataType: string
+		lineageTag: 9b45d123-93ab-441c-ac97-111eab78dea6
+		summarizeBy: none
+		sourceColumn: OperationsManagerID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OperationsManagerName
+		dataType: string
+		lineageTag: f7424fe8-b447-447b-bd70-9bb1b7b05358
+		summarizeBy: none
+		sourceColumn: OperationsManagerName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QualityAnalystID
+		dataType: string
+		lineageTag: 251ecfc4-860b-4e28-9641-e28dad08feab
+		summarizeBy: none
+		sourceColumn: QualityAnalystID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QualityAnalystName
+		dataType: string
+		lineageTag: 72394b91-c598-4fcf-9e83-c5f72c75f770
+		summarizeBy: none
+		sourceColumn: QualityAnalystName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerEmployeeID
+		dataType: string
+		lineageTag: 97912cbb-0fa6-4529-90c2-bed5d7a33b96
+		summarizeBy: none
+		sourceColumn: ManagerEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerName
+		dataType: string
+		lineageTag: 14ad8a39-5c03-4c02-8c35-257221946514
+		summarizeBy: none
+		sourceColumn: ManagerName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmploymentType
+		dataType: string
+		lineageTag: 4429d801-f145-4145-b6c5-67a3b011807e
+		summarizeBy: none
+		sourceColumn: EmploymentType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cb25b3c0-443c-4429-be31-c3ed54471ddc
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPeopleManager
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 529ceada-9afa-4fc7-bb95-4c439c5d6e4d
+		summarizeBy: none
+		sourceColumn: IsPeopleManager
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsEvaluator
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1f539327-ffdf-47f3-81d8-73b02ba8ffe6
+		summarizeBy: none
+		sourceColumn: IsEvaluator
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsGaugeEligible
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 02429ed7-87db-49a0-9368-137acc14f844
+		summarizeBy: none
+		sourceColumn: IsGaugeEligible
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AsOfDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 67bfc6f3-c462-4b24-9478-e90334fe19e9
+		summarizeBy: none
+		sourceColumn: AsOfDate
+
+		variation Variation
+			isDefault
+			relationship: 4ce6efd5-b5d5-4429-88b5-d79edbe10b7e
+			defaultHierarchy: LocalDateTable_abff0c10-983a-4803-b13d-1afe7665fe86.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OrgPath =
+			
+			PATH ( Dim_Employee[EmployeeID], Dim_Employee[ManagerKey] )
+		lineageTag: 0ab717c6-0309-40d5-ae1c-4701c8ab91fe
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrgLevel =
+			
+			PATHLENGTH ( Dim_Employee[OrgPath] )
+		formatString: 0
+		lineageTag: f62dd688-f01d-476a-8072-0c091bb4d0fe
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ManagerID From Path' =
+			
+			PATHITEM ( Dim_Employee[OrgPath], 1, TEXT )
+		lineageTag: 5b84d36a-ac69-4958-b60f-bad93751fb31
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerKey =
+			
+			VAR m = Dim_Employee[ManagerEmployeeID]
+			RETURN
+			    IF ( m = "" || ISBLANK ( m ), BLANK (), m )
+		lineageTag: 296e2b88-28ec-4dc4-b428-84b83b184462
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Employee = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_Employee.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"EmployeeID", type text}, {"EmployeeNumber", type text}, {"EmployeeName", type text},
+				        {"FirstName", type text}, {"LastName", type text}, {"LDAP", type text}, {"Email", type text},
+				        {"Role", type text}, {"JobBand", type text}, {"Site", type text}, {"Country", type text},
+				        {"LOB", type text}, {"PrimaryChannel", type text}, {"Shift", type text}, {"TeamName", type text},
+				        {"HireDate", type date}, {"TenureDays", Int64.Type}, {"TenureBucket", type text},
+				        {"IsNewHire", type logical}, {"NestingDaysTarget", Int64.Type}, {"NestingEndDate", type date},
+				        {"SupervisorID", type text}, {"SupervisorName", type text},
+				        {"AssistantManagerID", type text}, {"AssistantManagerName", type text},
+				        {"OperationsManagerID", type text}, {"OperationsManagerName", type text},
+				        {"QualityAnalystID", type text}, {"QualityAnalystName", type text},
+				        {"ManagerEmployeeID", type text}, {"ManagerName", type text},
+				        {"EmploymentType", type text}, {"IsActive", type logical}, {"IsPeopleManager", type logical},
+				        {"IsEvaluator", type logical}, {"IsGaugeEligible", type logical}, {"AsOfDate", type date}
+				    }),
+				    Clean = Table.SelectRows(Types, each [EmployeeID] <> null and [EmployeeID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"EmployeeID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

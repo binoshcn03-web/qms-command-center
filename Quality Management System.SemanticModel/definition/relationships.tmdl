@@ -1,0 +1,177 @@
+relationship d6402bbd-4662-4275-9169-5356852e8352
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_COPQ_Rate.EffectiveFrom
+	toColumn: LocalDateTable_adbf734b-c919-4dca-b54e-349b8fa39c51.Date
+
+relationship c621e3bc-e6a8-4f47-ae44-302cf9e6877e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Employee.HireDate
+	toColumn: LocalDateTable_730ce55c-d92d-41a0-8bc5-e6c6f7df1472.Date
+
+relationship 315f39b6-4dcf-4ad5-8402-642fbfb07e59
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Employee.NestingEndDate
+	toColumn: LocalDateTable_0f948ddd-155f-4a15-bcba-0e8a92878af8.Date
+
+relationship 4ce6efd5-b5d5-4429-88b5-d79edbe10b7e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Employee.AsOfDate
+	toColumn: LocalDateTable_abff0c10-983a-4803-b13d-1afe7665fe86.Date
+
+relationship 68438d5a-614b-429c-9586-5340dd03e0d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_QA_Parameter.EffectiveFrom
+	toColumn: LocalDateTable_f1e64d95-66c7-47a2-abec-2a5aeefe8742.Date
+
+relationship bf4ede04-e381-4382-b854-b4aca882ae18
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Calibration.CalibrationDatetime
+	toColumn: LocalDateTable_86c0b4c1-9e7e-4852-9395-cb0cb73c5979.Date
+
+relationship 5e7fbde2-3527-4343-85b7-5bfcfac4d81e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Coaching.CoachingDatetime
+	toColumn: LocalDateTable_66f8861b-63e2-4b8f-ac22-0ba79c68b9d6.Date
+
+relationship db4cd40a-5a8a-4833-a22f-aecf10e337bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Coaching.FeedbackDueDatetime
+	toColumn: LocalDateTable_cdcc0e32-6458-4e12-bb29-c7afd2e059a3.Date
+
+relationship 51d28a41-7cf4-45ea-ab63-3e9fbb822c65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_CRM_Contact.ContactDatetime
+	toColumn: LocalDateTable_0188e2ee-f011-4d40-b4f6-6e8e66d635db.Date
+
+relationship bb797658-936a-4041-9ce2-433d99d9065f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_CRM_Contact.ContactDate
+	toColumn: LocalDateTable_da812a61-9cbb-41f2-8c8a-b65b1af322b7.Date
+
+relationship 81d51d5c-6379-461d-b86b-40f44931b726
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_QA_Evaluation.EvaluatedDatetime
+	toColumn: LocalDateTable_9274d622-f58d-4e04-bba1-e8d9bd3e25a3.Date
+
+relationship d197d779-f668-451e-8418-0812152fadfb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_QA_Evaluation.EvaluatedDate
+	toColumn: LocalDateTable_52332cdf-753b-4f9a-b20e-1f96c6862a3c.Date
+
+relationship 9f51e79e-075c-4d33-9dde-e74c30e20da7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_QA_Evaluation.ContactDatetime
+	toColumn: LocalDateTable_38bcf33c-c2ee-4ffb-8d8c-c528d4effa59.Date
+
+relationship 67789e95-fbe2-4732-a5a1-14e8642f3e2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_QA_Evaluation.FeedbackDueDatetime
+	toColumn: LocalDateTable_50fd83a2-d745-4a30-9591-ac00c508542d.Date
+
+relationship 107946c9-6095-4c34-8280-582fbfb51956
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Sampling_Plan.PeriodEnd
+	toColumn: LocalDateTable_33f0c170-9327-41ea-a43f-97c690169051.Date
+
+relationship AutoDetected_04fdb8b8-8b0a-46be-82d6-400c5f422f74
+	fromColumn: Fact_Coaching.CoachingActionID
+	toColumn: Dim_Coaching.CoachingActionID
+
+relationship AutoDetected_965585ff-bf60-4d56-a30b-ae2518f0689c
+	fromColumn: Fact_Calibration.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship AutoDetected_d844817c-5029-4a3e-8216-e86611fd74cc
+	fromColumn: Fact_Coaching.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship AutoDetected_5eb73eca-8f3b-4a2d-854f-9dbc214e8ccf
+	fromColumn: Fact_CRM_Contact.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship AutoDetected_b4594a42-2c16-4cb9-bcd0-e84a1d9f0520
+	fromColumn: Fact_QA_Evaluation.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship AutoDetected_07382675-25d9-4134-a9cc-236457e6b219
+	fromColumn: Fact_Coaching.EmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship AutoDetected_23a0c3d5-e1b2-4b3d-bcc6-bfa6402fc97e
+	fromColumn: Fact_CRM_Contact.EmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship AutoDetected_8eb72b4e-fcf9-4e4b-b3d0-d4720f9ca8b8
+	fromColumn: Fact_QA_Evaluation.EmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship AutoDetected_d43d533c-1009-41ec-a240-9c32151cf9ee
+	fromColumn: Fact_CRM_Contact.TcdLeafKey
+	toColumn: Dim_TCD.TcdLeafKey
+
+relationship AutoDetected_195d6d16-5232-4edc-8c69-00e97b0b938b
+	fromColumn: Fact_QA_Evaluation.TcdLeafKey
+	toColumn: Dim_TCD.TcdLeafKey
+
+relationship AutoDetected_d1827eb7-0640-4488-a9d9-9540df615205
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Calibration.EvaluationID
+	toColumn: Fact_QA_Evaluation.EvaluationID
+
+relationship AutoDetected_d9c513ac-f564-41e5-95ff-2570e67f1205
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Coaching.EvaluationID
+	toColumn: Fact_QA_Evaluation.EvaluationID
+
+relationship AutoDetected_3a9cf699-23bf-4050-bff0-2679bd7e92ea
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_QA_Evaluation.ContactID
+	toColumn: Fact_CRM_Contact.ContactID
+
+relationship 364daa43-66b2-4304-a60c-9d7d5448e702
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_QA_Parameter.EffectiveTo
+	toColumn: LocalDateTable_5a19d094-9979-4349-aef8-f3a53e9bc1bd.Date
+
+relationship AutoDetected_eb850ea7-0d01-47f2-a0e4-8316a7adc460
+	fromColumn: Fact_QA_Evaluation_Line.DateKey
+	toColumn: Dim_Date.DateKey
+
+relationship AutoDetected_ddd6c422-b78f-4283-a009-c70b8f293c1d
+	isActive: false
+	fromColumn: Fact_QA_Evaluation_Line.EmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship AutoDetected_aec9ffad-950f-43be-94c5-e3e4f4ee2746
+	fromColumn: Fact_QA_Evaluation_Line.TcdLeafKey
+	toColumn: Dim_TCD.TcdLeafKey
+
+relationship AutoDetected_e6fe682a-b67a-4fb0-b5d5-e86515cc00a2
+	isActive: false
+	fromColumn: Fact_QA_Evaluation_Line.EvaluationID
+	toColumn: Fact_QA_Evaluation.EvaluationID
+
+relationship e069a326-0385-925a-886c-3e0a3f97d951
+	fromColumn: Fact_QA_Evaluation_Line.ParameterKey
+	toColumn: Dim_QA_Parameter.ParameterID
+
+relationship 10856cdf-041a-6697-f1c8-491f58c2e233
+	isActive: false
+	fromColumn: Fact_Calibration.EvaluatorEmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship c18e87e2-84a5-fb4e-c845-2abda02cf210
+	isActive: false
+	fromColumn: Fact_Calibration.GaugeEmployeeID
+	toColumn: Dim_Employee.EmployeeID
+
+relationship 24099ed5-c053-5284-e48d-35634b7f63c8
+	fromColumn: Fact_Sampling_Plan.PeriodStart
+	toColumn: Dim_Date.FullDate
+

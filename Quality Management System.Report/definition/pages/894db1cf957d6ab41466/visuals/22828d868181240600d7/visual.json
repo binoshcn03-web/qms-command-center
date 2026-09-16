@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "22828d868181240600d7",
+  "position": {
+    "x": 557.14285714285722,
+    "y": 374.28571428571433,
+    "z": 11000,
+    "height": 676.52425596174419,
+    "width": 494.82917007487572,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_TCD"
+                    }
+                  },
+                  "Property": "Level2SubCategory"
+                }
+              },
+              "queryRef": "Dim_TCD.Level2SubCategory",
+              "nativeQueryRef": "Level2SubCategory"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Contacts"
+                }
+              },
+              "queryRef": "_Measures.Contacts",
+              "nativeQueryRef": "Contacts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Contact Mix %"
+                }
+              },
+              "queryRef": "_Measures.Contact Mix %",
+              "nativeQueryRef": "Contact Mix %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quality Score"
+                }
+              },
+              "queryRef": "_Measures.Quality Score",
+              "nativeQueryRef": "Quality Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "DSAT Rate"
+                }
+              },
+              "queryRef": "_Measures.DSAT Rate",
+              "nativeQueryRef": "DSAT Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_TCD"
+                  }
+                },
+                "Property": "Level2SubCategory"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Quality Score by Sub TCD'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Trebuchet MS'''"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

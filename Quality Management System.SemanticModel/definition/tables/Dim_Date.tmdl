@@ -1,0 +1,457 @@
+table Dim_Date
+	lineageTag: 4d4257f8-877c-484f-ab2f-3e381a8fbb76
+	dataCategory: Time
+
+	column FullDate
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 14b2d196-50d0-4038-ae2f-b3bea0562fb1
+		summarizeBy: none
+		sourceColumn: FullDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 66a4dc3f-066f-403c-b956-64cc159d250f
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e7b56d61-616b-4e31-bcf8-06f841109a77
+		summarizeBy: sum
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: af5319d5-044d-46cf-a622-54e168262ea9
+		summarizeBy: sum
+		sourceColumn: QuarterNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarter
+		dataType: string
+		lineageTag: 38394a14-0ed1-4f8c-a1c0-dcbfcd5f7ee7
+		summarizeBy: none
+		sourceColumn: YearQuarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 88341fc1-d356-436e-95b4-7ca6ae84eae4
+		summarizeBy: sum
+		sourceColumn: MonthNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 91cd1aff-94e0-44fa-a7b8-7d79da7d2550
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameShort
+		dataType: string
+		lineageTag: bd49a9e0-7e26-4227-8314-c3e331e3005f
+		summarizeBy: none
+		sourceColumn: MonthNameShort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: string
+		lineageTag: 87525c73-832c-4d59-b03c-44cb64518980
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthName
+		dataType: string
+		lineageTag: 61809086-dd14-4e5b-a3ee-5914ed8e6883
+		summarizeBy: none
+		sourceColumn: YearMonthName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: f38d5a3d-5201-4497-9384-5846df5a540c
+		summarizeBy: sum
+		sourceColumn: DayOfMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d1777d7-637a-40ab-aac4-1e2edcd20b13
+		summarizeBy: sum
+		sourceColumn: DayOfYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 1f23385e-a17d-4f9f-8076-a06f5b3aafd9
+		summarizeBy: none
+		sourceColumn: DayName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNameShort
+		dataType: string
+		lineageTag: a65dd0fe-41d3-4ac3-979e-6ea3b8363d7d
+		summarizeBy: none
+		sourceColumn: DayNameShort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekIso
+		dataType: int64
+		formatString: 0
+		lineageTag: 3402be7a-cef6-4298-8957-1f2b0ada3e47
+		summarizeBy: sum
+		sourceColumn: DayOfWeekIso
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d64b0b4e-fa21-4ba2-b747-c6394ae12af7
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsoYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 37648f11-c8c6-4e99-876a-72de80519a98
+		summarizeBy: sum
+		sourceColumn: IsoYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsoWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: 0778e005-993b-47ae-a33e-bf27ea0c40ba
+		summarizeBy: sum
+		sourceColumn: IsoWeek
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsoYearWeek
+		dataType: string
+		lineageTag: 7f637c65-b388-42c7-b4ac-d70e146112be
+		summarizeBy: none
+		sourceColumn: IsoYearWeek
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 59ec89fc-089f-48c2-9069-3b19a99c0719
+		summarizeBy: none
+		sourceColumn: WeekStartDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekEndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 465f3bea-8873-4913-9e11-539c5bca168c
+		summarizeBy: none
+		sourceColumn: WeekEndDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FiscalYearLabel
+		dataType: string
+		lineageTag: 0ec3cf4f-357f-461c-9118-6ae019ad605a
+		summarizeBy: none
+		sourceColumn: FiscalYearLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 48484d71-078c-497c-8f97-78f3529a87e9
+		summarizeBy: sum
+		sourceColumn: FiscalMonthNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d2ab787-5b94-47cb-8e03-5b205fc3a904
+		summarizeBy: sum
+		sourceColumn: FiscalQuarterNumber
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearQuarter
+		dataType: string
+		lineageTag: 0b2d1bbb-2b42-46ae-bded-c38cfb34e68e
+		summarizeBy: none
+		sourceColumn: FiscalYearQuarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolidayName
+		dataType: string
+		lineageTag: 32c3e42b-8463-4758-94cf-d47eed83eea1
+		summarizeBy: none
+		sourceColumn: HolidayName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolidayCountries
+		dataType: string
+		lineageTag: a9479108-9679-4e9f-b111-228da3ac5faf
+		summarizeBy: none
+		sourceColumn: HolidayCountries
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHoliday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c4e34f03-6a90-4a27-8439-7036c41e540a
+		summarizeBy: none
+		sourceColumn: IsHoliday
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWorkingDay
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fa4105ec-bff7-413f-837a-ac39c7b02b05
+		summarizeBy: none
+		sourceColumn: IsWorkingDay
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AsOfDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 32161a91-ccbb-456a-b153-a23015bca779
+		summarizeBy: none
+		sourceColumn: AsOfDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IsCurrentMonth
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a0995306-a9e4-4696-bc6f-98abdc4d8d2e
+		summarizeBy: none
+		sourceColumn: IsCurrentMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentYear
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a4ff3b3a-2cf6-4e1c-aa90-17734c5e32e5
+		summarizeBy: none
+		sourceColumn: IsCurrentYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentFiscalYear
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d12ab14a-cdb6-4efb-a7af-7d944c26aa4a
+		summarizeBy: none
+		sourceColumn: IsCurrentFiscalYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFutureDate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 64b80d4c-6904-425e-abe1-6e7f2e7ac2fb
+		summarizeBy: none
+		sourceColumn: IsFutureDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysFromAsOf
+		dataType: int64
+		formatString: 0
+		lineageTag: 102afc66-bb8d-49fe-93a3-200b94650bf2
+		summarizeBy: sum
+		sourceColumn: DaysFromAsOf
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 2311bd92-d896-46a0-8248-e85050534bea
+		summarizeBy: sum
+		sourceColumn: MonthIndex
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 289e3a54-5c67-459a-b29d-b27c21e7b0a1
+		summarizeBy: sum
+		sourceColumn: DateIndex
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SamplingPeriodMonth
+		dataType: string
+		lineageTag: c24d3dc8-d707-4fea-8ce9-115204b70e6b
+		summarizeBy: none
+		sourceColumn: SamplingPeriodMonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SamplingPeriodWeek
+		dataType: string
+		lineageTag: bc167fa9-6a64-4846-bc99-0fd3200ef059
+		summarizeBy: none
+		sourceColumn: SamplingPeriodWeek
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_Date.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"DateKey", Int64.Type}, {"FullDate", type date}, {"Year", Int64.Type}, {"QuarterNumber", Int64.Type},
+				        {"YearQuarter", type text}, {"MonthNumber", Int64.Type}, {"MonthName", type text}, {"MonthNameShort", type text},
+				        {"YearMonth", type text}, {"YearMonthName", type text}, {"DayOfMonth", Int64.Type}, {"DayOfYear", Int64.Type},
+				        {"DayName", type text}, {"DayNameShort", type text}, {"DayOfWeekIso", Int64.Type},
+				        {"IsWeekend", type logical}, {"IsoYear", Int64.Type}, {"IsoWeek", Int64.Type}, {"IsoYearWeek", type text},
+				        {"WeekStartDate", type date}, {"WeekEndDate", type date}, {"FiscalYearLabel", type text},
+				        {"FiscalMonthNumber", Int64.Type}, {"FiscalQuarterNumber", Int64.Type}, {"FiscalYearQuarter", type text},
+				        {"IsHoliday", type logical}, {"HolidayName", type text}, {"HolidayCountries", type text},
+				        {"IsWorkingDay", type logical}, {"AsOfDate", type date}, {"IsCurrentMonth", type logical},
+				        {"IsCurrentYear", type logical}, {"IsCurrentFiscalYear", type logical}, {"IsFutureDate", type logical},
+				        {"DaysFromAsOf", Int64.Type}, {"MonthIndex", Int64.Type}, {"DateIndex", Int64.Type},
+				        {"SamplingPeriodMonth", type text}, {"SamplingPeriodWeek", type text}
+				    }),
+				    Clean = Table.SelectRows(Types, each [DateKey] <> null and [FullDate] <> null),
+				    Sorted = Table.Sort(Clean, {{"FullDate", Order.Ascending}})
+				in
+				    Sorted
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

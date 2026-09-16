@@ -1,0 +1,129 @@
+expression 'Errors in Fact_CRM_Contact' =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_CRM_Contact.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    Types = Table.TransformColumnTypes(Headers, {
+		        {"ContactID", type text}, {"InteractionID", type text}, {"CaseID", type text},
+		        {"ContactDatetime", type datetime}, {"ContactDate", type datetime}, {"DateKey", Int64.Type},
+		        {"ContactHour", Int64.Type}, {"Channel", type text}, {"Direction", type text},
+		        {"QueueName", type text}, {"InitiationMethod", type text},
+		        {"EmployeeID", type text}, {"LDAP", type text}, {"SupervisorID", type text}, {"QualityAnalystID", type text},
+		        {"Site", type text}, {"Shift", type text}, {"AgentTenureDaysAtContact", Int64.Type},
+		        {"IsNewHireContact", type logical}, {"CustomerKey", type text}, {"Marketplace", type text},
+		        {"Language", type text}, {"IsPrimeCustomer", type logical}, {"OrderID", type text}, {"ASIN", type text},
+		        {"TcdLeafKey", type text}, {"TcdL1Code", type text}, {"Level1Product", type text},
+		        {"Level2SubCategory", type text}, {"Level3ContactReason", type text}, {"Level4ReasonDetail", type text},
+		        {"QueueTimeSec", Int64.Type}, {"TalkTimeSec", Int64.Type}, {"HoldTimeSec", Int64.Type},
+		        {"WrapTimeSec", Int64.Type}, {"HandleTimeSec", Int64.Type}, {"FirstResponseTimeSec", Int64.Type},
+		        {"ChatMessageCount", Int64.Type},
+		        {"IsAbandoned", type logical}, {"IsTransferred", type logical}, {"IsEscalated", type logical},
+		        {"IsResolved", type logical}, {"IsRepeatContact7d", type logical}, {"IsRepeatContact30d", type logical},
+		        {"CallbackRequested", type logical}, {"Disposition", type text}, {"DisconnectType", type text},
+		        {"RecordingAvailable", type logical}, {"TranscriptAvailable", type logical},
+		        {"SurveyOffered", type logical}, {"CsatScore", type number}, {"IsDsat", type logical},
+		        {"AfterHoursFlag", type logical}, {"VolumeSpikeDay", type logical}
+		    }),
+		    DateOnly = Table.TransformColumns(Types, {{"ContactDate", Date.From, type date}}),
+		    Clean = Table.SelectRows(DateOnly, each [ContactID] <> null and [ContactID] <> ""),
+		    Distinct = Table.Distinct(Clean, {"ContactID"})
+		in
+		    Distinct
+	lineageTag: b07ab3e2-1d2f-4bf4-86c1-28cbb305da80
+	queryGroup: 'Query Errors - 11-09-2026 18:11:56'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Errors in Fact_QA_Evaluation' =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_QA_Evaluation.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    Types = Table.TransformColumnTypes(Headers, {
+		        {"EvaluationID", type text}, {"ContactID", type text}, {"InteractionID", type text}, {"CaseID", type text},
+		        {"FormVersion", type text}, {"EvaluationType", type text},
+		        {"EvaluatedDatetime", type datetime}, {"EvaluatedDate", type datetime}, {"DateKey", Int64.Type},
+		        {"ContactDatetime", type datetime}, {"Channel", type text}, {"QueueName", type text},
+		        {"Site", type text}, {"Marketplace", type text}, {"Language", type text},
+		        {"EmployeeID", type text}, {"LDAP", type text}, {"SupervisorID", type text},
+		        {"EvaluatorEmployeeID", type text}, {"QualityAnalystID", type text},
+		        {"AgentTenureDaysAtContact", Int64.Type}, {"IsNewHireAudit", type logical},
+		        {"TcdLeafKey", type text}, {"Level1Product", type text}, {"Level3ContactReason", type text},
+		        {"Disposition", type text}, {"HandleTimeSec", Int64.Type}, {"CsatScore", type number},
+		        {"IsDsat", type logical}, {"IsResolved", type logical},
+		        {"QP01_SecurityVerification", type text}, {"QP02_PrivacyGdpr", type text},
+		        {"QP03_PaymentRefundIntegrity", type text}, {"QP04_PolicyDisclosure", type text},
+		        {"QP05_IssueIdentification", type text}, {"QP06_ResolutionSop", type text},
+		        {"QP07_FcrAttempt", type text}, {"QP08_CourtesyEmpathy", type text},
+		        {"QP09_OwnershipControl", type text}, {"QP10_CorrectInformation", type text},
+		        {"QP11_EscalationAccuracy", type text}, {"QP12_ExpectationNextSteps", type text},
+		        {"QP13_CrmDocumentation", type text}, {"QP14_TcdAccuracy", type text},
+		        {"QP15_KbAdherence", type text}, {"QP16_HoldTransferProtocol", type text},
+		        {"QP17_DispositionAccuracy", type text}, {"QP18_RequiredOfferPath", type text},
+		        {"QP19_OpeningBranding", type text}, {"QP20_ClosingRecap", type text},
+		        {"ScoringParametersApplicable", Int64.Type}, {"ScoringParametersPassed", Int64.Type},
+		        {"ClientQualityScore", type number},
+		        {"HasCustomerCriticalError", type logical}, {"HasBusinessCriticalError", type logical},
+		        {"HasComplianceCriticalError", type logical},
+		        {"IsFatalAudit", type logical}, {"IsFailedAudit", type logical},
+		        {"FailedParameterList", type text}, {"FailedParameterCount", Int64.Type},
+		        {"ErrorCommitted", type logical}, {"FeedbackRequired", type logical},
+		        {"FeedbackDueDatetime", type datetime}
+		    }),
+		    DateOnly = Table.TransformColumns(Types, {{"EvaluatedDate", Date.From, type date}}),
+		    Clean = Table.SelectRows(DateOnly, each [EvaluationID] <> null and [EvaluationID] <> ""),
+		    Distinct = Table.Distinct(Clean, {"EvaluationID"})
+		in
+		    Distinct
+	lineageTag: 025245e8-d1b8-4d23-a819-864d1754a50a
+	queryGroup: 'Query Errors - 11-09-2026 18:11:56'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Errors in Fact_CRM_Contact (2)' =
+		let
+		Source = Fact_CRM_Contact,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"ContactID", "InteractionID", "CaseID", "ContactDatetime", "ContactDate", "DateKey", "ContactHour", "Channel", "Direction", "QueueName", "InitiationMethod", "EmployeeID", "LDAP", "SupervisorID", "QualityAnalystID", "Site", "Shift", "AgentTenureDaysAtContact", "IsNewHireContact", "CustomerKey", "Marketplace", "Language", "IsPrimeCustomer", "OrderID", "ASIN", "TcdLeafKey", "TcdL1Code", "Level1Product", "Level2SubCategory", "Level3ContactReason", "Level4ReasonDetail", "QueueTimeSec", "TalkTimeSec", "HoldTimeSec", "WrapTimeSec", "HandleTimeSec", "FirstResponseTimeSec", "ChatMessageCount", "IsAbandoned", "IsTransferred", "IsEscalated", "IsResolved", "IsRepeatContact7d", "IsRepeatContact30d", "CallbackRequested", "Disposition", "DisconnectType", "RecordingAvailable", "TranscriptAvailable", "SurveyOffered", "CsatScore", "IsDsat", "AfterHoursFlag", "VolumeSpikeDay"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "ContactID", "InteractionID", "CaseID", "ContactDatetime", "ContactDate", "DateKey", "ContactHour", "Channel", "Direction", "QueueName", "InitiationMethod", "EmployeeID", "LDAP", "SupervisorID", "QualityAnalystID", "Site", "Shift", "AgentTenureDaysAtContact", "IsNewHireContact", "CustomerKey", "Marketplace", "Language", "IsPrimeCustomer", "OrderID", "ASIN", "TcdLeafKey", "TcdL1Code", "Level1Product", "Level2SubCategory", "Level3ContactReason", "Level4ReasonDetail", "QueueTimeSec", "TalkTimeSec", "HoldTimeSec", "WrapTimeSec", "HandleTimeSec", "FirstResponseTimeSec", "ChatMessageCount", "IsAbandoned", "IsTransferred", "IsEscalated", "IsResolved", "IsRepeatContact7d", "IsRepeatContact30d", "CallbackRequested", "Disposition", "DisconnectType", "RecordingAvailable", "TranscriptAvailable", "SurveyOffered", "CsatScore", "IsDsat", "AfterHoursFlag", "VolumeSpikeDay"})
+		in
+		    #"Reordered Columns"
+	lineageTag: 05014950-da5b-488c-9cd1-10d27ae26e11
+	queryGroup: 'Query Errors - 12-09-2026 11:55:23'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Errors in Fact_QA_Evaluation (2)' =
+		let
+		Source = Fact_QA_Evaluation,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"EvaluationID", "ContactID", "InteractionID", "CaseID", "FormVersion", "EvaluationType", "EvaluatedDatetime", "EvaluatedDate", "DateKey", "ContactDatetime", "Channel", "QueueName", "Site", "Marketplace", "Language", "EmployeeID", "LDAP", "SupervisorID", "EvaluatorEmployeeID", "QualityAnalystID", "AgentTenureDaysAtContact", "IsNewHireAudit", "TcdLeafKey", "Level1Product", "Level3ContactReason", "Disposition", "HandleTimeSec", "CsatScore", "IsDsat", "IsResolved", "QP01_SecurityVerification", "QP02_PrivacyGdpr", "QP03_PaymentRefundIntegrity", "QP04_PolicyDisclosure", "QP05_IssueIdentification", "QP06_ResolutionSop", "QP07_FcrAttempt", "QP08_CourtesyEmpathy", "QP09_OwnershipControl", "QP10_CorrectInformation", "QP11_EscalationAccuracy", "QP12_ExpectationNextSteps", "QP13_CrmDocumentation", "QP14_TcdAccuracy", "QP15_KbAdherence", "QP16_HoldTransferProtocol", "QP17_DispositionAccuracy", "QP18_RequiredOfferPath", "QP19_OpeningBranding", "QP20_ClosingRecap", "ScoringParametersApplicable", "ScoringParametersPassed", "ClientQualityScore", "HasCustomerCriticalError", "HasBusinessCriticalError", "HasComplianceCriticalError", "IsFatalAudit", "IsFailedAudit", "FailedParameterList", "FailedParameterCount", "ErrorCommitted", "FeedbackRequired", "FeedbackDueDatetime"})
+		in
+		    #"Kept Errors"
+	lineageTag: c5e9b145-1a24-4e9a-9362-2de4c9b46fb0
+	queryGroup: 'Query Errors - 12-09-2026 11:55:23'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

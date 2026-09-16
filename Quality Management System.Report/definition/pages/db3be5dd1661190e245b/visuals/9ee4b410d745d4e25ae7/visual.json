@@ -1,0 +1,109 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9ee4b410d745d4e25ae7",
+  "position": {
+    "x": 27.060970238469768,
+    "y": 819.560812936513,
+    "z": 11000,
+    "height": 247.41458503743786,
+    "width": 691.987667526584,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_QA_Parameter"
+                    }
+                  },
+                  "Property": "ParameterName"
+                }
+              },
+              "queryRef": "Dim_QA_Parameter.ParameterName",
+              "nativeQueryRef": "ParameterName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_QA_Parameter"
+                    }
+                  },
+                  "Property": "CriticalityType"
+                }
+              },
+              "queryRef": "Dim_QA_Parameter.CriticalityType",
+              "nativeQueryRef": "CriticalityType"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Defects"
+                }
+              },
+              "queryRef": "_Measures.Defects",
+              "nativeQueryRef": "Defects"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Attribute Fail Rate"
+                }
+              },
+              "queryRef": "_Measures.Attribute Fail Rate",
+              "nativeQueryRef": "Attribute Fail Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "RPN"
+                }
+              },
+              "queryRef": "_Measures.RPN",
+              "nativeQueryRef": "RPN"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FMEA Tracking'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,48 @@
+table 'Coaching Performance Parameter'
+	lineageTag: f45f8eb3-fe3e-4c44-b05e-d5d37f7a4432
+
+	column 'QA vs Supervisor'
+		lineageTag: 448477c5-ff2f-4835-b1ef-d4d96ae80728
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 44c7eb0a-3d05-446e-a2cb-2736cfde99a2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 8c66421f-b058-45c7-80bf-53833f9c2bce
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Coaching Performance Parameter' = calculated
+		mode: import
+		source =
+				{
+				    ("EvaluatorName", NAMEOF('Fact_Calibration'[EvaluatorName]), 0),
+				    ("SupervisorName", NAMEOF('Dim_Employee'[SupervisorName]), 1)
+				}
+
+	annotation PBI_Id = cd094a380ef54e2cb536b4de516868bc
+

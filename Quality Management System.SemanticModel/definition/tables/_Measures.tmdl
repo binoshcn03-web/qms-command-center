@@ -1,0 +1,923 @@
+table _Measures
+	lineageTag: f7dd9716-6d51-4dd2-a409-d659b1bc3e3e
+
+	measure Contacts = COUNTROWS ( Fact_CRM_Contact )
+		formatString: 0
+		lineageTag: 6548bc44-d1a1-43e8-b38b-18649fae6969
+
+	measure Audits = COUNTROWS ( Fact_QA_Evaluation )
+		formatString: 0
+		lineageTag: 6007cf43-87b7-4f3c-856e-6d923d49d974
+
+	measure 'Audit Lines' = COUNTROWS ( Fact_QA_Evaluation_Line )
+		formatString: 0
+		lineageTag: b3fdeffb-954b-4d25-a2d7-35b8b50825cb
+
+	measure 'Coaching Sessions' = COUNTROWS ( Fact_Coaching )
+		formatString: 0
+		lineageTag: 5a95fabd-4086-4013-91f6-ac5579543d92
+
+	measure 'Quality Score' =
+			
+			AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] )
+		lineageTag: 6c9d979c-3258-4a46-aa27-4efd1ba079f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fail Rate' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_QA_Evaluation ),
+			        Fact_QA_Evaluation[IsFailedAudit] = TRUE ()
+			    ),
+			    [Audits]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ebeb1a10-f450-4923-8c91-dcf98c6e3a48
+
+	measure 'Fatal Rate' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_QA_Evaluation ),
+			        Fact_QA_Evaluation[IsFatalAudit] = TRUE ()
+			    ),
+			    [Audits]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5a02a5c8-d843-431b-bfa6-3447762ea2c8
+
+	measure 'CC Accuracy' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_QA_Evaluation ),
+			        Fact_QA_Evaluation[HasCustomerCriticalError] = FALSE ()
+			    ),
+			    [Audits]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d5acbda2-1d4e-40e6-ad73-82dfd6a0561e
+
+	measure 'BC Accuracy' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_QA_Evaluation ),
+			        Fact_QA_Evaluation[HasBusinessCriticalError] = FALSE ()
+			    ),
+			    [Audits]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bcecd75d-414b-4162-8a02-bbe8d54727ec
+
+	measure 'CompC Accuracy' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_QA_Evaluation ),
+			        Fact_QA_Evaluation[HasComplianceCriticalError] = FALSE ()
+			    ),
+			    [Audits]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 44de4246-e74e-430d-80a0-605eb281e174
+
+	measure 'Feedback SLA %' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_Coaching ),
+			        Fact_Coaching[IsSlaMet] = TRUE ()
+			    ),
+			    [Coaching Sessions]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 42201d55-6ffb-442a-b6fa-eae44898f348
+
+	measure Surveys =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_CRM_Contact ),
+			    Fact_CRM_Contact[SurveyOffered] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: a7b0f69b-848b-4629-9600-6a3f1224bb9e
+
+	measure 'DSAT Rate' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_CRM_Contact ),
+			        Fact_CRM_Contact[IsDsat] = TRUE ()
+			    ),
+			    [Surveys]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3f885c13-7a9f-4989-9848-7b621a915272
+
+	measure 'Resolve Rate' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_CRM_Contact ),
+			        Fact_CRM_Contact[IsResolved] = TRUE ()
+			    ),
+			    [Contacts]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a7af460c-06f8-45ce-b436-c66349a7b659
+
+	measure Defects =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_QA_Evaluation_Line ),
+			    Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: da7bee1c-ebd8-4cac-8231-7b7ef58e789e
+
+	measure 'Applicable Lines' =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_QA_Evaluation_Line ),
+			    Fact_QA_Evaluation_Line[IsApplicable] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: 44930625-3eac-46fb-b31f-d166e4a5b088
+
+	measure 'Attribute Fail Rate' =
+			
+			DIVIDE ( [Defects], [Applicable Lines] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0a0074c5-d351-4a8a-9a2d-715ea6fe5267
+
+	measure 'Repeat Fail Pairs' =
+			
+			COUNTROWS (
+			    FILTER (
+			        ADDCOLUMNS (
+			            SUMMARIZE (
+			                Fact_QA_Evaluation_Line,
+			                Fact_QA_Evaluation_Line[EmployeeID],
+			                Fact_QA_Evaluation_Line[ParameterID]
+			            ),
+			            "@Fails",
+			                CALCULATE (
+			                    COUNTROWS ( Fact_QA_Evaluation_Line ),
+			                    Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			                )
+			        ),
+			        [@Fails] >= 2
+			    )
+			)
+		formatString: 0
+		lineageTag: 92247a4e-a723-42b9-b386-4b929a2e61b8
+
+	measure 'Repeat Fail Agents' =
+			
+			COUNTROWS (
+			    SUMMARIZE (
+			        FILTER (
+			            ADDCOLUMNS (
+			                SUMMARIZE (
+			                    Fact_QA_Evaluation_Line,
+			                    Fact_QA_Evaluation_Line[EmployeeID],
+			                    Fact_QA_Evaluation_Line[ParameterID]
+			                ),
+			                "@Fails",
+			                    CALCULATE (
+			                        COUNTROWS ( Fact_QA_Evaluation_Line ),
+			                        Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			                    )
+			            ),
+			            [@Fails] >= 2
+			        ),
+			        Fact_QA_Evaluation_Line[EmployeeID]
+			    )
+			)
+		formatString: 0
+		lineageTag: 3d4a0adc-1c04-4be9-b549-fb9ec1285fb0
+
+	measure 'Defect Rank' =
+			
+			IF (
+			    [Defects] > 0,
+			    RANKX (
+			        ALL ( Dim_QA_Parameter[ParameterName] ),
+			        [Defects],
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			)
+		formatString: 0
+		lineageTag: 20daa567-70b9-4e0e-bc29-af9b95e8de17
+
+	measure Calibrations =
+			
+			COUNTROWS ( Fact_Calibration )
+		formatString: 0
+		lineageTag: db70fa76-0ed2-4c8a-aa3e-922e1ea3e43d
+
+	measure 'Calibrations Outside Tolerance' =
+			
+			SUM ( Fact_Calibration[OutsideFlag] )
+		formatString: 0
+		lineageTag: 621d450d-6d70-4573-98dd-7e21fef26a46
+
+	measure 'Calibration Precision %' =
+			
+			DIVIDE (
+			    [Calibrations] - [Calibrations Outside Tolerance],
+			    [Calibrations]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c26bd4c0-6ae7-4296-b9be-dfeca89e75c9
+
+	measure 'Avg Abs Variance %' =
+			
+			CALCULATE (
+			    AVERAGE ( Fact_Calibration[AbsVariancePct] ),
+			    USERELATIONSHIP ( Fact_Calibration[EvaluatorEmployeeID], Dim_Employee[EmployeeID] )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0c5457db-7415-4563-babd-1d6f544e10fc
+
+	measure 'Coaching On Time' =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_Coaching ),
+			    Fact_Coaching[IsSlaMet] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: 2cbb46c5-ce7c-41ab-9684-0b8315ab32e5
+
+	measure 'Coaching Late' =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_Coaching ),
+			    Fact_Coaching[IsSlaMet] = FALSE ()
+			)
+		formatString: 0
+		lineageTag: fd793bf4-7b2a-4a71-8937-49ad50b68a82
+
+	measure 'Fatal Coaching SLA %' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        COUNTROWS ( Fact_Coaching ),
+			        Fact_Coaching[IsSlaMet] = TRUE (),
+			        Fact_Coaching[IsFatalRelated] = TRUE ()
+			    ),
+			    CALCULATE (
+			        COUNTROWS ( Fact_Coaching ),
+			        Fact_Coaching[IsFatalRelated] = TRUE ()
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 793aee9f-3659-4bdc-9fd1-49f21b35b4a5
+
+	measure COPQ =
+			
+			CALCULATE (
+			    SUMX (
+			        FILTER (
+			            Fact_QA_Evaluation_Line,
+			            Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			        ),
+			        VAR cls = RELATED ( Dim_QA_Parameter[CopqClassHint] )
+			        RETURN
+			            LOOKUPVALUE (
+			                Dim_COPQ_Rate[TotalUnitCostUsd],
+			                Dim_COPQ_Rate[CopqRateKey],
+			                cls
+			            )
+			    ),
+			    TREATAS (
+			        VALUES ( Fact_QA_Evaluation[Channel] ),
+			        Fact_QA_Evaluation_Line[Channel]
+			    )
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 3ae0b68d-7f1b-4bab-9b3c-59201aa4adda
+
+	measure 'COPQ Internal' =
+			
+			SUMX (
+			    FILTER (
+			        Fact_QA_Evaluation_Line,
+			        Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			    ),
+			    VAR cls = RELATED ( Dim_QA_Parameter[CopqClassHint] )
+			    RETURN
+			        LOOKUPVALUE (
+			            Dim_COPQ_Rate[InternalCostUsd],
+			            Dim_COPQ_Rate[CopqRateKey],
+			            cls
+			        )
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 86af09fa-390a-48ef-8037-ff8be257778a
+
+	measure 'COPQ External' =
+			
+			SUMX (
+			    FILTER (
+			        Fact_QA_Evaluation_Line,
+			        Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			    ),
+			    VAR cls = RELATED ( Dim_QA_Parameter[CopqClassHint] )
+			    RETURN
+			        LOOKUPVALUE (
+			            Dim_COPQ_Rate[ExternalCostUsd],
+			            Dim_COPQ_Rate[CopqRateKey],
+			            cls
+			        )
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: a622756b-44b6-4403-9675-6b70a3f44d59
+
+	measure 'COPQ per Audit' =
+			
+			DIVIDE ( [COPQ], [Audits] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: ad21f965-56b4-4897-8201-72b860ed99c1
+
+	measure 'Sampling Target' =
+			
+			SUM ( Fact_Sampling_Plan[TargetAuditCount] )
+		formatString: 0
+		lineageTag: 0e855691-7a1c-46e4-9491-06e5fde7baaa
+
+	measure 'Sampling Attainment %' =
+			
+			DIVIDE ( [Audits], [Sampling Target] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b8b9a8ff-528f-4028-bc33-441f6c80dfb7
+
+	measure 'VSF Quality Score' =
+			
+			VAR AvgScore =
+			    AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] )
+			VAR StdScore =
+			    STDEV.P ( Fact_QA_Evaluation[ClientQualityScore] )
+			RETURN
+			    DIVIDE ( 6 * StdScore, AvgScore )
+		lineageTag: 6d55391d-a78c-48d9-84dc-c0a925eae68d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'New Hire Audits' =
+			
+			CALCULATE (
+			    [Audits],
+			    Fact_QA_Evaluation[IsNewHireAudit] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: 650fdec4-0d86-4dc7-980d-6882febad5be
+
+	measure 'New Hire Quality Score' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    Fact_QA_Evaluation[IsNewHireAudit] = TRUE ()
+			)
+		lineageTag: 661e96af-039d-4ca2-8555-385f6a7cfd7d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tenured Quality Score' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    Fact_QA_Evaluation[IsNewHireAudit] = FALSE ()
+			)
+		lineageTag: 45d4d28a-996c-4420-b59b-11a3c43f99e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Contact Mix %' =
+			
+			DIVIDE (
+			    [Contacts],
+			    CALCULATE ( [Contacts], ALLSELECTED ( Dim_TCD[Level1Product] ) )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 30826c1f-6d0b-49e2-a2e1-877d0d5419fb
+
+	measure DPMO =
+			
+			DIVIDE ( [Defects], [Applicable Lines] ) * 1000000
+		formatString: 0
+		lineageTag: 29cafd69-5f62-448a-ac23-f499391a08bf
+
+	measure Yield =
+			
+			1 - DIVIDE ( [Defects], [Applicable Lines] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b52c608a-d14e-4bcd-8203-98f3f31be8f9
+
+	measure 'Team Quality Score' =
+			
+			VAR CurrentEmp =
+			    MAX ( Dim_Employee[EmployeeID] )
+			RETURN
+			    IF (
+			        ISBLANK ( CurrentEmp ),
+			        [Quality Score],
+			        CALCULATE (
+			            [Quality Score],
+			            FILTER (
+			                ALL ( Dim_Employee ),
+			                PATHCONTAINS ( Dim_Employee[OrgPath], CurrentEmp )
+			            )
+			        )
+			    )
+		lineageTag: 92252270-63fa-4d07-8380-caaf94979d29
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Mean' =
+			
+			AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] )
+		lineageTag: f1c851ba-fe76-4978-849d-d075f4f5e504
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Stdev' =
+			
+			STDEV.P ( Fact_QA_Evaluation[ClientQualityScore] )
+		lineageTag: 124c08ff-817e-4cba-b3f8-2354a4bcc8b0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'UCL Quality' =
+			
+			[Quality Mean] + ( 3 * [Quality Stdev] )
+		lineageTag: 6b0b4d9c-afed-4c4a-92f7-b400ab3ee718
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LCL Quality' =
+			
+			MAX ( 0, [Quality Mean] - ( 3 * [Quality Stdev] ) )
+		lineageTag: f7cda565-212f-4b15-829f-2ad676613c14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nelson Rule 1 Points' =
+			
+			CALCULATE (
+			    COUNTROWS ( Fact_QA_Evaluation ),
+			    FILTER (
+			        Fact_QA_Evaluation,
+			        Fact_QA_Evaluation[ClientQualityScore] > [UCL Quality]
+			            || Fact_QA_Evaluation[ClientQualityScore] < [LCL Quality]
+			    )
+			)
+		formatString: 0
+		lineageTag: a964ea17-4876-4515-ae8f-e06caf4ca024
+
+	measure 'SPC In Control %' =
+			
+			DIVIDE ( [Audits] - [Nelson Rule 1 Points], [Audits] )
+		lineageTag: 1017641a-4745-41ea-bb36-50825159dc03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'COPC Reproducibility Proxy' =
+			
+			[Calibration Precision %]
+		lineageTag: 88e34dee-a448-4600-82ca-e72e3439f9e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Slope' =
+			
+			VAR t =
+			    FILTER (
+			        SUMMARIZE (
+			            Fact_QA_Evaluation,
+			            Dim_Date[DateIndex],
+			            "Y", AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] )
+			        ),
+			        NOT ISBLANK ( Dim_Date[DateIndex] )
+			    )
+			RETURN
+			    MINX ( LINESTX ( t, [Y], Dim_Date[DateIndex], TRUE, TRUE ), [Slope1] )
+		lineageTag: 7a70aa2a-88c8-46bd-8244-308558ad942e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Intercept' =
+			
+			VAR t =
+			    FILTER (
+			        SUMMARIZE (
+			            Fact_QA_Evaluation,
+			            Dim_Date[DateIndex],
+			            "Y", AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] )
+			        ),
+			        NOT ISBLANK ( Dim_Date[DateIndex] )
+			    )
+			RETURN
+			    MINX ( LINESTX ( t, [Y], Dim_Date[DateIndex], TRUE, TRUE ), [Intercept] )
+		lineageTag: acb79dc1-77ff-4754-99a9-faf7a2f77b1e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Forecast Quality' =
+			
+			[Quality Intercept] + [Quality Slope] * MAX ( Dim_Date[DateIndex] )
+		lineageTag: 82854891-530e-4a19-b11b-f0ecd0be2974
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Occurrence =
+			
+			MIN ( 10, MAX ( 1, ROUNDUP ( [Attribute Fail Rate] * 10, 0 ) ) )
+		lineageTag: 0fce1ac9-9d3f-4246-826b-e3eb779b95af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RPN =
+			
+			[Occurrence]
+			    * SELECTEDVALUE ( Dim_QA_Parameter[Severity] )
+			    * SELECTEDVALUE ( Dim_QA_Parameter[Detection] )
+		lineageTag: 430e7185-19d5-4f97-8ad1-2e61374aff27
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FMEA Rank' =
+			
+			IF (
+			    NOT ISBLANK ( [RPN] ),
+			    RANKX ( ALL ( Dim_QA_Parameter[ParameterName] ), [RPN],, DESC, DENSE )
+			)
+		formatString: 0
+		lineageTag: 57ea9caf-70a9-40f6-b1d0-f2633415ec30
+
+	measure 'Defects by Pillar' =
+			
+			[Defects]
+		formatString: 0
+		lineageTag: da5c8157-9c8f-4147-bd64-8c30488e60db
+
+	measure 'Pearson Quality vs CSAT' =
+			
+			VAR t =
+			    SUMMARIZE (
+			        Fact_QA_Evaluation,
+			        Fact_QA_Evaluation[EmployeeID],
+			        "Q", AVERAGE ( Fact_QA_Evaluation[ClientQualityScore] ),
+			        "C", AVERAGE ( Fact_QA_Evaluation[CsatScore] )
+			    )
+			VAR n = COUNTROWS ( FILTER ( t, NOT ISBLANK ( [Q] ) && NOT ISBLANK ( [C] ) ) )
+			VAR avgq = AVERAGEX ( t, [Q] )
+			VAR avgc = AVERAGEX ( t, [C] )
+			VAR num =
+			    SUMX ( t, ( [Q] - avgq ) * ( [C] - avgc ) )
+			VAR den =
+			    SQRT ( SUMX ( t, ( [Q] - avgq ) * ( [Q] - avgq ) ) )
+			        * SQRT ( SUMX ( t, ( [C] - avgc ) * ( [C] - avgc ) ) )
+			RETURN
+			    DIVIDE ( num, den )
+		lineageTag: 45856b66-f179-40bf-bbf0-74518069640b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Z Score Approx' =
+			
+			VAR p = [Yield]
+			RETURN
+			    IF (
+			        p <= 0 || p >= 1,
+			        BLANK (),
+			        4.56 * p ^ 0.25 - 0.86 * ( 1 - p ) ^ 0.25 - 1.85
+			    )
+		lineageTag: ebe12784-9998-4804-a673-29ccd5bc936b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RTY =
+			
+			PRODUCTX (
+			    VALUES ( Dim_QA_Parameter[ParameterID] ),
+			    VAR y =
+			        CALCULATE ( 1 - [Attribute Fail Rate] )
+			    RETURN
+			        IF ( y <= 0, 0.0001, y )
+			)
+		lineageTag: 36bf5a35-dae0-4993-9c40-e76a42ddedce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Pre Coaching' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    DATESINPERIOD ( Dim_Date[FullDate], MIN ( Fact_Coaching[CoachingDatetime] ) - 1, -30, DAY )
+			)
+		lineageTag: a5e9e3a1-3339-4633-9e02-dca777a3e529
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Post Coaching' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    DATESINPERIOD ( Dim_Date[FullDate], MAX ( Fact_Coaching[CoachingDatetime] ), 30, DAY )
+			)
+		lineageTag: 427cb357-5799-4d9c-b27d-8e60b94273e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Coaching Lift' =
+			
+			[Quality Post Coaching] - [Quality Pre Coaching]
+		lineageTag: c6bdd48a-6514-443f-b0b2-74d457c06849
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Coaching ROI Proxy' =
+			
+			[Coaching Lift] / 100 * [COPQ]
+		lineageTag: 9c79b5e2-39ca-4782-b1b7-a4ae37722bd0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fatal Audits' =
+			
+			CALCULATE (
+			    [Audits],
+			    Fact_QA_Evaluation[IsFatalAudit] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: ca20372a-a0f3-4537-81c4-13eccf385259
+
+	measure 'GDPR Defects' =
+			
+			CALCULATE (
+			    [Defects],
+			    Dim_QA_Parameter[ParameterID] = "QP-02"
+			)
+		formatString: 0
+		lineageTag: c4d582fc-3bbf-4906-8ccf-43e5d8648a59
+
+	measure 'Privacy Defects' =
+			
+			CALCULATE (
+			    [Defects],
+			    Dim_QA_Parameter[IsPrivacySensitive] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: 8987efcb-15d0-47b5-ad74-9f2873a7c560
+
+	measure 'Zero Tolerance Score' =
+			
+			IF ( [Fatal Audits] = 0 && [GDPR Defects] = 0, 100, 0 )
+		formatString: 0
+		lineageTag: b56cdfff-1dc9-4196-b1de-ad91b82b86b4
+
+	measure 'Glide Target' =
+			
+			SWITCH (
+			    SELECTEDVALUE ( Dim_Employee[TenureBucket] ),
+			    "0-30", 70,
+			    "31-90", 80,
+			    "91-180", 85,
+			    ">180", 88,
+			    85
+			)
+		formatString: 0
+		lineageTag: 3117f327-50ad-450f-bfe2-9a17d939f942
+
+	measure 'Glide Gap' =
+			
+			[Quality Score] - [Glide Target]
+		lineageTag: 4c600694-ae1e-4ab1-a1b3-05306941b8bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Winsorized Quality Score' =
+			
+			VAR lo =
+			    PERCENTILE.INC ( Fact_QA_Evaluation[ClientQualityScore], 0.1 )
+			VAR hi =
+			    PERCENTILE.INC ( Fact_QA_Evaluation[ClientQualityScore], 0.9 )
+			RETURN
+			    AVERAGEX (
+			        Fact_QA_Evaluation,
+			        MEDIANX (
+			            { lo, Fact_QA_Evaluation[ClientQualityScore], hi },
+			            [Value]
+			        )
+			    )
+		lineageTag: 03c6221a-8588-4c93-bca1-1fc8517e576b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TCD Mix Selected %' =
+			
+			DIVIDE (
+			    [Contacts],
+			    CALCULATE ( [Contacts], ALL ( Dim_TCD ) )
+			)
+		lineageTag: 1189ae9b-a5a6-40ac-b49a-2689f50fa1e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Defects Previous 30D' =
+			
+			CALCULATE (
+			    [Defects],
+			    DATESINPERIOD ( Dim_Date[FullDate], MAX ( Dim_Date[FullDate] ), -30, DAY )
+			)
+		formatString: 0
+		lineageTag: 8948f7c6-3202-4978-b6cc-4170984b0d31
+
+	measure 'Defects Prior 30D' =
+			
+			CALCULATE (
+			    [Defects],
+			    DATESINPERIOD ( Dim_Date[FullDate], MAX ( Dim_Date[FullDate] ) - 30, -30, DAY )
+			)
+		formatString: 0
+		lineageTag: 1fcfd981-7a35-4611-90c9-51a7a0b2bfd4
+
+	measure 'Defect Velocity' =
+			
+			[Defects Previous 30D] - [Defects Prior 30D]
+		formatString: 0
+		lineageTag: 86ec5a1d-6936-4882-9983-c966d0a371ac
+
+	measure 'TNI Flag' =
+			
+			IF ( [Defect Velocity] > 0 && [Attribute Fail Rate] > 0.08, "Intervene", "Watch" )
+		lineageTag: 44982ad5-24d4-46c0-95e2-e86d7adc65a5
+
+	measure 'Agents Failing Parameter' =
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( Fact_QA_Evaluation_Line[EmployeeID] ),
+			    Fact_QA_Evaluation_Line[IsDefect] = TRUE ()
+			)
+		formatString: 0
+		lineageTag: bcbffa9f-18a4-479b-91bb-e2d1068034e7
+
+	measure 'Repeat Fail Type' =
+			
+			VAR agents = [Agents Failing Parameter]
+			VAR pairs = [Repeat Fail Pairs]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        agents >= 8 && [Attribute Fail Rate] >= 0.12, "Structural",
+			        pairs >= 3 && agents <= 3, "Behavioral",
+			        pairs >= 2, "Mixed",
+			        "None"
+			    )
+		lineageTag: 01ce830d-ce1c-46a6-ac5f-2f2c6e9adedd
+
+	measure 'Action Sessions' =
+			
+			COUNTROWS ( Fact_Coaching )
+		formatString: 0
+		lineageTag: cf3fb1d5-5efc-41eb-9091-8f3bf2434a03
+
+	measure 'Action Lift' =
+			
+			[Coaching Lift]
+		lineageTag: 2d2ec5e3-fb57-4096-9060-ec106fdb300c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Action ROI' =
+			
+			[Coaching Lift] / 100
+			    * CALCULATE ( [COPQ], ALL ( Dim_Coaching ) )
+			    * DIVIDE ( [Action Sessions], [Coaching Sessions] )
+		lineageTag: 2cff542b-b065-445b-902f-47a46681f3d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PT01 CC Met' = IF ( [CC Accuracy] >= 0.95, 1, 0 )
+		formatString: 0
+		lineageTag: 1120df6e-d7cb-43d7-98f3-4e6563f7f7b0
+
+	measure 'PT02 BC Met' = IF ( [BC Accuracy] >= 0.90, 1, 0 )
+		formatString: 0
+		lineageTag: e4b87759-52f0-4ec0-967b-8edb0c068321
+
+	measure 'PT03 CompC Met' = IF ( [CompC Accuracy] >= 0.995, 1, 0 )
+		formatString: 0
+		lineageTag: dbe28e7d-18a6-4378-a99c-21851d7baf2d
+
+	measure 'PT04 Quality Met' = IF ( [Quality Score] >= 85, 1, 0 )
+		formatString: 0
+		lineageTag: 770fcb92-4a4a-420b-8d90-360eed5b2c39
+
+	measure 'PT05 Sampling Met' = IF ( [Sampling Attainment %] >= 0.95, 1, 0 )
+		formatString: 0
+		lineageTag: 26f34b4d-fa02-44fe-8c81-1102c7ccf1c7
+
+	measure 'PT06 Feedback Met' = IF ( [Feedback SLA %] >= 0.90, 1, 0 )
+		formatString: 0
+		lineageTag: f52a502f-855a-490b-8e06-0e10132fa392
+
+	measure 'PT07 Calibration Met' = IF ( [Calibration Precision %] >= 0.90, 1, 0 )
+		formatString: 0
+		lineageTag: 8f3685b0-0c4b-44b7-be92-8b4252172722
+
+	measure 'PT08 Fatal Met' = IF ( [Fatal Rate] <= 0.01, 1, 0 )
+		formatString: 0
+		lineageTag: 9a179af3-7141-44f4-9d86-a03de93ab378
+
+	measure 'PT09 DSAT Met' = IF ( [DSAT Rate] <= 0.12, 1, 0 )
+		formatString: 0
+		lineageTag: ee4199e6-e7d2-473a-a893-613a5755f28a
+
+	measure 'PT10 Resolve Met' = IF ( [Resolve Rate] >= 0.85, 1, 0 )
+		formatString: 0
+		lineageTag: 9b2f4597-18ab-4717-81c7-afbbc4474dec
+
+	measure 'PT11 VSF Met' = IF ( [VSF Quality Score] <= 1.5, 1, 0 )
+		formatString: 0
+		lineageTag: 58dea2f4-fc46-4aa2-99c3-fef56e32e1c5
+
+	measure 'PT12 Repeat Met' = IF ( [Repeat Fail Agents] <= 20, 1, 0 )
+		formatString: 0
+		lineageTag: 1c10d758-8aa3-4e6d-8fba-026064302746
+
+	measure 'PT13 New Hire Met' = IF ( [New Hire Quality Score] >= 75, 1, 0 )
+		formatString: 0
+		lineageTag: e0a0089e-1428-41ad-a94b-34ff0d1113f6
+
+	measure 'PT14 GDPR Met' = IF ( [GDPR Defects] = 0, 1, 0 )
+		formatString: 0
+		lineageTag: 26977d14-0b00-4a61-8e46-914f45d51aa0
+
+	measure 'Control Tower Score' =
+			
+			[PT01 CC Met] + [PT02 BC Met] + [PT03 CompC Met] + [PT04 Quality Met]
+			    + [PT05 Sampling Met] + [PT06 Feedback Met] + [PT07 Calibration Met]
+			    + [PT08 Fatal Met] + [PT09 DSAT Met] + [PT10 Resolve Met]
+			    + [PT11 VSF Met] + [PT12 Repeat Met] + [PT13 New Hire Met]
+			    + [PT14 GDPR Met]
+		formatString: 0
+		lineageTag: 565121e5-4fe0-4a0e-a4a8-c3709dfec938
+
+	measure 'Control Tower %' =
+			
+			DIVIDE ( [Control Tower Score], 14 )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b82a715e-b939-4da4-8a89-af40f7a4e719
+
+	measure 'Team Quality Score by Supervisor' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    ALL ( Dim_Employee ),
+			    Dim_Employee[SupervisorID] = MAX ( Dim_Employee[SupervisorID] )
+			)
+		lineageTag: 346704fb-6f4c-45de-92bf-355e15bfb186
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Quality Score All Sites' =
+			
+			CALCULATE (
+			    [Quality Score],
+			    ALL ( Dim_Employee[Site] )
+			)
+		lineageTag: 5ea1096f-fd0e-480b-859f-a8ba0aa1389b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 5711a786-de76-4b8d-84ab-4548d66f9816
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

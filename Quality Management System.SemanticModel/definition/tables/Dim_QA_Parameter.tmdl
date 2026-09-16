@@ -1,0 +1,373 @@
+table Dim_QA_Parameter
+	lineageTag: 9a801ce7-7995-4474-b8be-6c25a089f64d
+
+	column ParameterID
+		dataType: string
+		lineageTag: 56aed85b-a2fe-4a76-9556-365dae7ccf5c
+		summarizeBy: none
+		sourceColumn: ParameterID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormVersion
+		dataType: string
+		lineageTag: 53459283-e6f9-464b-94b6-7cf43c0601fa
+		summarizeBy: none
+		sourceColumn: FormVersion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParameterName
+		dataType: string
+		lineageTag: 36cee9c8-d98c-40be-b37f-d1f6dc2c554e
+		summarizeBy: none
+		sourceColumn: ParameterName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 262de96c-6522-479d-9f9c-6da45bf3dc69
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CriticalityType
+		dataType: string
+		lineageTag: a001b7bf-881c-49b9-94eb-cec403cf9e13
+		summarizeBy: none
+		sourceColumn: CriticalityType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BestQmKpi
+		dataType: string
+		lineageTag: d5c7bc7f-cb05-4efa-b071-3f4838d5dd00
+		summarizeBy: none
+		sourceColumn: BestQmKpi
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TargetAccuracyPct
+		dataType: double
+		lineageTag: 8238f194-726a-4eb4-a459-6978b055f5bf
+		summarizeBy: sum
+		sourceColumn: TargetAccuracyPct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WeightPctClient
+		dataType: int64
+		formatString: 0
+		lineageTag: 410849b8-b62b-4f19-8678-4ea1685dd318
+		summarizeBy: sum
+		sourceColumn: WeightPctClient
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeightPctInternal
+		dataType: int64
+		formatString: 0
+		lineageTag: baae6fe2-f43d-46ea-8f7e-e3873d62664d
+		summarizeBy: sum
+		sourceColumn: WeightPctInternal
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientScoreAffecting
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1b9877c2-d139-4521-87b6-2855b80897dc
+		summarizeBy: none
+		sourceColumn: ClientScoreAffecting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCritical
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1a04c1a4-0517-4c6e-a98d-c10e74f79f82
+		summarizeBy: none
+		sourceColumn: IsCritical
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFatal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 46dc7e58-1fdf-4370-88b2-4635dfcd4809
+		summarizeBy: none
+		sourceColumn: IsFatal
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsZeroTolerance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e3675beb-05b2-4ad6-83f9-f466704183dc
+		summarizeBy: none
+		sourceColumn: IsZeroTolerance
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FailInteractionOnFail
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 97a24a46-96cc-4a7f-91d0-19df5c99334e
+		summarizeBy: none
+		sourceColumn: FailInteractionOnFail
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPrivacySensitive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3caa2e6e-1c6f-4758-a10b-9d560d3c467f
+		summarizeBy: none
+		sourceColumn: IsPrivacySensitive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsGdprRelevant
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cad0bfd0-559b-4827-8579-0af8479d2d3f
+		summarizeBy: none
+		sourceColumn: IsGdprRelevant
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScoringType
+		dataType: string
+		lineageTag: c5c638a7-2b15-4a81-a292-f848f7fd302e
+		summarizeBy: none
+		sourceColumn: ScoringType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PassThresholdPct
+		dataType: int64
+		formatString: 0
+		lineageTag: 695378d1-5a55-4b4d-9a40-e871c40874de
+		summarizeBy: sum
+		sourceColumn: PassThresholdPct
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepeatFailEligible
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 61fd5d08-20e1-41b2-b5a6-27b9524f450f
+		summarizeBy: none
+		sourceColumn: RepeatFailEligible
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IshikawaPillar
+		dataType: string
+		lineageTag: 00ad01c8-959b-46f4-965e-68b1ad5254a0
+		summarizeBy: none
+		sourceColumn: IshikawaPillar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CopqClassHint
+		dataType: string
+		lineageTag: abfe5a94-17b0-4623-a77b-ed2cf5bd737a
+		summarizeBy: none
+		sourceColumn: CopqClassHint
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QualityFocus
+		dataType: string
+		lineageTag: 5cc4e1a6-034c-4e45-8fbc-c67221705a33
+		summarizeBy: none
+		sourceColumn: QualityFocus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AmazonFailExample
+		dataType: string
+		lineageTag: bee36c6c-85f4-471a-add1-d3602bfa767d
+		summarizeBy: none
+		sourceColumn: AmazonFailExample
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BestQmNote
+		dataType: string
+		lineageTag: 545ea3d3-bab3-4534-b64a-408088d2a786
+		summarizeBy: none
+		sourceColumn: BestQmNote
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveFrom
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d771132d-2f67-4583-9f0d-dd2cea518c17
+		summarizeBy: none
+		sourceColumn: EffectiveFrom
+
+		variation Variation
+			isDefault
+			relationship: 68438d5a-614b-429c-9586-5340dd03e0d0
+			defaultHierarchy: LocalDateTable_f1e64d95-66c7-47a2-abec-2a5aeefe8742.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EffectiveTo
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 338e3dde-7f18-4314-a728-2e3642e5df69
+		summarizeBy: none
+		sourceColumn: EffectiveTo
+
+		variation Variation
+			isDefault
+			relationship: 364daa43-66b2-4304-a60c-9d7d5448e702
+			defaultHierarchy: LocalDateTable_5a19d094-9979-4349-aef8-f3a53e9bc1bd.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 536a9510-1861-498b-8f46-3f67b6765263
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: a46241db-9224-4f42-b4a5-f31e06e43ee8
+		summarizeBy: sum
+		sourceColumn: SortOrder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Severity =
+			
+			SWITCH (
+			    Dim_QA_Parameter[CriticalityType],
+			    "Compliance Critical", 10,
+			    "Customer Critical", 8,
+			    "Business Critical", 5,
+			    "Rider", 2,
+			    3
+			)
+		formatString: 0
+		lineageTag: cd5f2ce5-b9b2-4cbd-b69c-a2bc576bd583
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detection =
+			
+			SWITCH (
+			    Dim_QA_Parameter[CriticalityType],
+			    "Compliance Critical", 3,
+			    "Customer Critical", 4,
+			    "Business Critical", 6,
+			    7
+			)
+		formatString: 0
+		lineageTag: 711c8996-1296-429e-99af-199e045dc978
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_QA_Parameter = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Dim_QA_Parameter.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"ParameterID", type text}, {"FormVersion", type text}, {"ParameterName", type text},
+				        {"Category", type text}, {"CriticalityType", type text}, {"BestQmKpi", type text},
+				        {"TargetAccuracyPct", type number}, {"WeightPctClient", Int64.Type}, {"WeightPctInternal", Int64.Type},
+				        {"ClientScoreAffecting", type logical}, {"IsCritical", type logical}, {"IsFatal", type logical},
+				        {"IsZeroTolerance", type logical}, {"FailInteractionOnFail", type logical},
+				        {"IsPrivacySensitive", type logical}, {"IsGdprRelevant", type logical},
+				        {"ScoringType", type text}, {"PassThresholdPct", Int64.Type}, {"RepeatFailEligible", type logical},
+				        {"IshikawaPillar", type text}, {"CopqClassHint", type text}, {"QualityFocus", type text},
+				        {"AmazonFailExample", type text}, {"BestQmNote", type text},
+				        {"EffectiveFrom", type date}, {"EffectiveTo", type date},
+				        {"IsActive", type logical}, {"SortOrder", Int64.Type}
+				    }),
+				    Clean = Table.SelectRows(Types, each [ParameterID] <> null and [ParameterID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"ParameterID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

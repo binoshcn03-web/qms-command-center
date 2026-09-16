@@ -1,0 +1,50 @@
+table 'TCD Grain'
+	lineageTag: 88780165-c8dd-4665-8859-c32d5bbed71b
+
+	column Parameter
+		lineageTag: 095cccc0-76ec-401e-999d-b4a4e0f4507e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: 20147ff2-79c6-4e31-b987-5ea41418a768
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: 112ceffd-9aaa-4a2d-8034-1f17b3c71f92
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'TCD Grain' = calculated
+		mode: import
+		source =
+				{
+				    ("Level1Product", NAMEOF('Dim_TCD'[Level1Product]), 0),
+				    ("Level2SubCategory", NAMEOF('Dim_TCD'[Level2SubCategory]), 1),
+				    ("Level3ContactReason", NAMEOF('Dim_TCD'[Level3ContactReason]), 2),
+				    ("Level4ReasonDetail", NAMEOF('Dim_TCD'[Level4ReasonDetail]), 3)
+				}
+
+	annotation PBI_Id = e5f3cf5116764a489dddddda15260e31
+

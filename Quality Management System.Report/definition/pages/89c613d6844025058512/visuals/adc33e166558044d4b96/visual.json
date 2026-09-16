@@ -1,0 +1,474 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "adc33e166558044d4b96",
+  "position": {
+    "x": 0,
+    "y": 200.416983085951,
+    "z": 6000,
+    "height": 880.403175698999,
+    "width": 1920.6627545736969,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "EvaluationID"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.EvaluationID",
+              "nativeQueryRef": "EvaluationID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "ContactID"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.ContactID",
+              "nativeQueryRef": "ContactID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "InteractionID"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.InteractionID",
+              "nativeQueryRef": "InteractionID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "CaseID"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.CaseID",
+              "nativeQueryRef": "CaseID"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "EvaluatedDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.EvaluatedDatetime.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "EvaluatedDatetime Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "EvaluatedDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.EvaluatedDatetime.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "EvaluatedDatetime Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "EvaluatedDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.EvaluatedDatetime.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "EvaluatedDatetime Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "EvaluatedDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.EvaluatedDatetime.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "EvaluatedDatetime Day"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "Channel"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.Channel",
+              "nativeQueryRef": "Channel"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "Site"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.Site",
+              "nativeQueryRef": "Site"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "QueueName"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.QueueName",
+              "nativeQueryRef": "QueueName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "Marketplace"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.Marketplace",
+              "nativeQueryRef": "Marketplace"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "Language"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.Language",
+              "nativeQueryRef": "Language"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Employee"
+                    }
+                  },
+                  "Property": "EmployeeName"
+                }
+              },
+              "queryRef": "Dim_Employee.EmployeeName",
+              "nativeQueryRef": "EmployeeName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Employee"
+                    }
+                  },
+                  "Property": "QualityAnalystName"
+                }
+              },
+              "queryRef": "Dim_Employee.QualityAnalystName",
+              "nativeQueryRef": "QualityAnalystName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_TCD"
+                    }
+                  },
+                  "Property": "Level1Product"
+                }
+              },
+              "queryRef": "Dim_TCD.Level1Product",
+              "nativeQueryRef": "Level1Product"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_TCD"
+                    }
+                  },
+                  "Property": "Level2SubCategory"
+                }
+              },
+              "queryRef": "Dim_TCD.Level2SubCategory",
+              "nativeQueryRef": "Level2SubCategory"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_TCD"
+                    }
+                  },
+                  "Property": "Level3ContactReason"
+                }
+              },
+              "queryRef": "Dim_TCD.Level3ContactReason",
+              "nativeQueryRef": "Level3ContactReason"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_TCD"
+                    }
+                  },
+                  "Property": "Level4ReasonDetail"
+                }
+              },
+              "queryRef": "Dim_TCD.Level4ReasonDetail",
+              "nativeQueryRef": "Level4ReasonDetail"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_QA_Evaluation"
+                        }
+                      },
+                      "Property": "ClientQualityScore"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_QA_Evaluation.ClientQualityScore)",
+              "nativeQueryRef": "Sum of ClientQualityScore"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "IsFailedAudit"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.IsFailedAudit",
+              "nativeQueryRef": "IsFailedAudit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "IsFatalAudit"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.IsFatalAudit",
+              "nativeQueryRef": "IsFatalAudit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "FailedParameterList"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.FailedParameterList",
+              "nativeQueryRef": "FailedParameterList"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_QA_Evaluation"
+                    }
+                  },
+                  "Property": "FeedbackRequired"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.FeedbackRequired",
+              "nativeQueryRef": "FeedbackRequired"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "FeedbackDueDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.FeedbackDueDatetime.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "FeedbackDueDatetime Month"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Fact_QA_Evaluation"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "FeedbackDueDatetime"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Fact_QA_Evaluation.FeedbackDueDatetime.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "FeedbackDueDatetime Day"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

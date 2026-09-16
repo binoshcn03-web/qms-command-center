@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Quality Management System"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2fbe21e6-7167-4702-a97a-8c27ed55ac5e"
+  }
+}

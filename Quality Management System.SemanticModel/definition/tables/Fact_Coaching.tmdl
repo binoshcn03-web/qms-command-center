@@ -1,0 +1,248 @@
+table Fact_Coaching
+	lineageTag: 22e7c6c1-7d80-4d5e-8efa-d33dcde639a7
+
+	column CoachingID
+		dataType: string
+		lineageTag: 9504aa60-baf8-4e4e-9965-9a46ac93dfd3
+		summarizeBy: none
+		sourceColumn: CoachingID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EvaluationID
+		dataType: string
+		lineageTag: 292c64f4-cc5f-4a62-bba9-44d30e8ec6af
+		summarizeBy: none
+		sourceColumn: EvaluationID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactID
+		dataType: string
+		lineageTag: edb8452e-6869-4795-8088-7d31b868a415
+		summarizeBy: none
+		sourceColumn: ContactID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: string
+		lineageTag: 3405b016-f17e-4375-9e20-02f7570d8f02
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoachEmployeeID
+		dataType: string
+		lineageTag: 653c9359-1658-4e48-873b-ddd4a49a5a27
+		summarizeBy: none
+		sourceColumn: CoachEmployeeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoachingActionID
+		dataType: string
+		lineageTag: 44d80a0e-ece1-4247-a345-72b921187b1d
+		summarizeBy: none
+		sourceColumn: CoachingActionID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryFailedParameters
+		dataType: string
+		lineageTag: 3df7ab15-f1b6-47de-b758-f1f199e774cb
+		summarizeBy: none
+		sourceColumn: PrimaryFailedParameters
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoachingDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 004bd3ca-ef14-4619-8426-e648be927978
+		summarizeBy: none
+		sourceColumn: CoachingDatetime
+
+		variation Variation
+			isDefault
+			relationship: 5e7fbde2-3527-4343-85b7-5bfcfac4d81e
+			defaultHierarchy: LocalDateTable_66f8861b-63e2-4b8f-ac22-0ba79c68b9d6.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ab00ca39-002e-4787-897e-da319e9318b3
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedbackDueDatetime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 75652b5c-2092-4647-8b5b-2f55aac188df
+		summarizeBy: none
+		sourceColumn: FeedbackDueDatetime
+
+		variation Variation
+			isDefault
+			relationship: db4cd40a-5a8a-4833-a22f-aecf10e337bf
+			defaultHierarchy: LocalDateTable_cdcc0e32-6458-4e12-bb29-c7afd2e059a3.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SlaHoursTarget
+		dataType: int64
+		formatString: 0
+		lineageTag: 599fdd3a-bcf1-43cb-ad15-4a1fa6af86cc
+		summarizeBy: sum
+		sourceColumn: SlaHoursTarget
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedbackLagHours
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fa949ed-7db1-49a9-ae50-3e519b6a8799
+		summarizeBy: sum
+		sourceColumn: FeedbackLagHours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSlaMet
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78bbf1cd-f285-499c-918d-767d36517bc1
+		summarizeBy: none
+		sourceColumn: IsSlaMet
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CoachingChannel
+		dataType: string
+		lineageTag: ba5ff620-ef6e-4a5f-a700-a0db7992035e
+		summarizeBy: none
+		sourceColumn: CoachingChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcknowledgementFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bba9cd43-c5fa-4e49-a0f9-3629fdf1ecc9
+		summarizeBy: none
+		sourceColumn: AcknowledgementFlag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFatalRelated
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 39ed340f-aed0-424a-832e-3593cf92cfe5
+		summarizeBy: none
+		sourceColumn: IsFatalRelated
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNewHireRelated
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c9de5742-0e75-4f9f-975e-ff19511c6633
+		summarizeBy: none
+		sourceColumn: IsNewHireRelated
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 04ca29b0-ab05-455a-ad95-adda6f608d55
+		summarizeBy: none
+		sourceColumn: Site
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionName
+		dataType: string
+		lineageTag: cf4f4dde-6fea-4984-b848-d9522e5f2cc5
+		summarizeBy: none
+		sourceColumn: ActionName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionFamily
+		dataType: string
+		lineageTag: 4806c889-0ae9-4d97-be55-f39637e738f3
+		summarizeBy: none
+		sourceColumn: ActionFamily
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Coaching = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\binos\OneDrive\文档\Data_Analytics_Projects\PBI PI_QMS\Data_Source\Fact_Coaching.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Types = Table.TransformColumnTypes(Headers, {
+				        {"CoachingID", type text}, {"EvaluationID", type text}, {"ContactID", type text},
+				        {"EmployeeID", type text}, {"CoachEmployeeID", type text}, {"CoachingActionID", type text},
+				        {"PrimaryFailedParameters", type text}, {"CoachingDatetime", type datetime},
+				        {"DateKey", Int64.Type}, {"FeedbackDueDatetime", type datetime},
+				        {"SlaHoursTarget", Int64.Type}, {"FeedbackLagHours", Int64.Type},
+				        {"IsSlaMet", type logical}, {"CoachingChannel", type text},
+				        {"AcknowledgementFlag", type logical}, {"IsFatalRelated", type logical},
+				        {"IsNewHireRelated", type logical}, {"Site", type text},
+				        {"ActionName", type text}, {"ActionFamily", type text}
+				    }),
+				    Clean = Table.SelectRows(Types, each [CoachingID] <> null and [CoachingID] <> ""),
+				    Distinct = Table.Distinct(Clean, {"CoachingID"})
+				in
+				    Distinct
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
